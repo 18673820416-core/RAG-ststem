@@ -1,0 +1,5 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting psutil
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/55/4c/c3ed1a622b6ae2fd3c945a366e64eb35247a31e4db16cf5095e269e8eb3c/psutil-7.1.3-cp37-abi3-win_amd64.whl (247 kB)
+Installing collected packages: psutil
+Successfully installed psutil-7.1.3

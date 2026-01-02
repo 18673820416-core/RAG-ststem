@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-12-02T16:24:02.731086",
+  "status": "healthy",
+  "problems": [
+    {
+      "id": "path_special_chars",
+      "type": "path_issue",
+      "severity": "medium",
+      "original_path": "e:\\AI\\qiusuo-framework\\#problems_and_diagnostics",
+      "fixed_path": "e:\\RAG系统\\problems_and_diagnostics",
+      "status": "fixed",
+      "description": "目录路径包含特殊字符 # ，已修复为安全路径"
+    }
+  ],
+  "system_info": {
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32",
+    "working_directory": "E:\\RAG系统",
+    "env_path": "E:\\RAG系统\\myenv_stable\\Scripts\\python.exe",
+    "timestamp": "2025-12-02T16:24:02.731184",
+    "cpu_count": 12,
+    "python_path": [
+      "E:\\RAG系统",
+      "C:\\Users\\liang\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip",
+      "C:\\Users\\liang\\AppData\\Local\\Programs\\Python\\Python313\\DLLs",
+      "C:\\Users\\liang\\AppData\\Local\\Programs\\Python\\Python313\\Lib",
+      "C:\\Users\\liang\\AppData\\Local\\Programs\\Python\\Python313"
+    ]
+  },
+  "component_status": {
+    "path_utils": {
+      "status": "healthy",
+      "problems_directory": "e:\\RAG系统\\problems_and_diagnostics",
+      "directory_exists": true
+    },
+    "error_handler": {
+      "status": "healthy"
+    },
+    "error_knowledge_base": {
+      "status": "healthy",
+      "statistics": {
+        "total_entries": 0,
+        "total_usage": 0,
+        "average_success_rate": 0,
+        "last_updated": "2025-12-02T16:24:02.731443"
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "id": "recommendation_path_special_chars",
+      "type": "info",
+      "description": "问题 \"目录路径包含特殊字符 # ，已修复为安全路径\" 已自动修复"
+    },
+    {
+      "id": "regular_checks",
+      "type": "info",
+      "description": "建议定期运行系统诊断，保持系统健康"
+    }
+  ]
+}

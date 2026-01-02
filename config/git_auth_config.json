@@ -1,0 +1,19 @@
+{
+  "git_repository": {
+    "url": "https://github.com/18673820416-core/RAG-ststem.git",
+    "username": "18673820416-core",
+    "repository_name": "RAG-ststem"
+  },
+  "last_push_status": "completed",
+  "ignored_files": [
+    "data/*.db",
+    "data/*.json",
+    "data/model_cache/**/*",
+    "data/llm_optimized_indices.json",
+    "data/rag_memory_backup_20251121_091409.db",
+    "data/rag_memory.db",
+    "data/rag_system.db"
+  ],
+  "git_setup_notes": "此项目已配置.gitignore忽略所有数据文件，只推送代码文件"
+  密码是：lrl110709
+}

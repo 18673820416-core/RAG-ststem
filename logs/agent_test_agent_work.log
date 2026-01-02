@@ -1,0 +1,2 @@
+{"timestamp": "2025-11-30T23:36:33.428123", "type": "错误", "content": "处理消息失败: 'UnifiedMemorySystem' object has no attribute 'get_memories'"}
+{"timestamp": "2025-11-30T23:37:37.486718", "type": "错误", "content": "处理消息失败: 'str' object has no attribute 'value'"}

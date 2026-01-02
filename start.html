@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!-- @self-expose: {"id": "start_page", "name": "Start Page", "type": "frontend", "version": "1.0.1", "needs": {"deps": [], "resources": []}, "provides": {"capabilities": ["系统启动页面", "瓮城前哨入口"]}} -->
+<html lang="zh-CN">
+<head>
+    <!-- 
+    RAG智能系统 - 统一交互平台启动页面
+    ===================================
+    
+    页面定位：
+    - 这是RAG系统的统一交互平台入口页面
+    - 支持两种交互模式：简易聊天机器人和多智能体交互
+    - 采用"无门即安全"设计理念（端口即密码）
+    
+    功能说明：
+    1. 系统状态检查 - 实时显示后端服务状态
+    2. 交互模式选择 - 支持两种模式的自由切换
+    3. 后端服务启动 - 点击按钮启动完整系统
+    4. 错误报告 - 前端错误日志记录机制
+    
+    访问路径：
+    - 直接访问: http://localhost:10808
+    - 模式选择：通过导航菜单选择交互模式
+    
+    注意：这是统一的交互平台，支持双模式切换。
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG智能系统 - 统一交互平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .launch-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .mode-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .mode-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .mode-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .mode-button.active {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .launch-button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .launch-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .launch-button:active {
+            transform: translateY(0);
+        }
+
+        .status {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .security-note {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+
+        /* 登录表单样式 */
+        .login-form {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-form h3 {
+            margin-bottom: 20px;
+            font-weight: 300;
+            font-size: 1.5em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: rgba(79, 172, 254, 0.8);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.85em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .login-info {
+            margin-top: 15px;
+            font-size: 0.85em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="launch-container">
+        <div class="logo">🚀</div>
+        <h1>RAG智能系统</h1>
+        <div class="subtitle">前端启动后端 · 无门即安全</div>
+        
+        <div class="mode-selector">
+            <div class="mode-button active" data-target="/templates/chatroom.html">多智能体聊天室</div>
+            <div class="mode-button" data-target="/templates/base_agent_chat.html">基类智能体交互</div>
+        </div>
+        
+        <!-- 登录表单 -->
+        <div class="login-form">
+            <h3>👤 用户登录</h3>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名" required>
+                <div class="error-message" id="usernameError">请输入有效的用户名</div>
+            </div>
+            <div class="form-group">
+                <label for="password">8位数密码</label>
+                <input type="password" id="password" placeholder="请输入8位数字密码" maxlength="8" required>
+                <div class="error-message" id="passwordError">密码必须为8位数字</div>
+            </div>
+            <div class="login-info">
+                💡 密码为8位数字，用于系统身份验证
+            </div>
+        </div>
+        
+        <button class="launch-button" onclick="startBackend()">🚀 进入系统</button>
+        
+        <div class="status" id="status">请输入用户名和密码，然后点击进入系统</div>
+        
+        <div class="security-note">
+            💡 系统说明<br>
+            🔐 本系统采用集成式服务器设计，已包含：<br>
+            🚀 多模态融合引擎、推理引擎、多智能体聊天室、RAG检索增强生成<br>
+            💬 请先选择交互模式，然后点击进入系统
+        </div>
+    </div>
+
+    <script>
+        let selectedMode = '/templates/chatroom.html';
+        
+        // 模式选择功能
+        function selectMode(button) {
+            // 移除所有按钮的active类
+            document.querySelectorAll('.mode-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 添加active类到当前按钮
+            button.classList.add('active');
+            
+            // 更新选中的模式
+            selectedMode = button.getAttribute('data-target');
+            
+            // 更新状态提示
+            const status = document.getElementById('status');
+            status.textContent = `已选择: ${button.textContent}，请输入用户名和密码后点击进入系统`;
+        }
+        
+        // 页面加载时初始化模式选择
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为模式按钮添加点击事件
+            document.querySelectorAll('.mode-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    selectMode(this);
+                });
+            });
+            
+            // 为表单输入添加实时验证
+            document.getElementById('username').addEventListener('input', validateUsername);
+            document.getElementById('password').addEventListener('input', validatePassword);
+        });
+        
+        // 验证用户名
+        function validateUsername() {
+            const username = document.getElementById('username').value;
+            const errorElement = document.getElementById('usernameError');
+            
+            if (username.trim().length < 2) {
+                errorElement.classList.add('show');
+                return false;
+            } else {
+                errorElement.classList.remove('show');
+                return true;
+            }
+        }
+        
+        // 验证密码
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            const errorElement = document.getElementById('passwordError');
+            
+            const passwordRegex = /^\d{8}$/;
+            if (!passwordRegex.test(password)) {
+                errorElement.classList.add('show');
+                return false;
+            } else {
+                errorElement.classList.remove('show');
+                return true;
+            }
+        }
+        
+        // 保存用户信息到localStorage
+        function saveUserInfo(username, password) {
+            // 保存用户信息，用于向量库的人物维维度信息补全
+            localStorage.setItem('rag_user_info', JSON.stringify({
+                username: username,
+                timestamp: new Date().toISOString()
+            }));
+        }
+        
+        async function startBackend() {
+            const button = document.querySelector('.launch-button');
+            const status = document.getElementById('status');
+            
+            // 步骤1: 验证表单
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            
+            if (!validateUsername() || !validatePassword()) {
+                status.textContent = '❌ 请检查输入信息，用户名和密码格式不正确';
+                return;
+            }
+            
+            button.disabled = true;
+            button.textContent = '🚀 启动中...';
+            status.textContent = '正在启动系统功能，请稍候...';
+            
+            try {
+                // 步骤2: 保存用户信息
+                saveUserInfo(username, password);
+                status.textContent = '✅ 用户信息已保存，正在启动RAG主服务器...';
+                
+                // 步骤3: 启动RAG主服务器（关键！获取动态端口）
+                const startResponse = await fetch('/api/start_backend', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        mode: selectedMode,
+                        username: username
+                    })
+                });
+                
+                if (!startResponse.ok) {
+                    throw new Error('启动RAG服务器失败，请检查后端日志');
+                }
+                
+                const startData = await startResponse.json();
+                console.log('启动响应:', startData);
+                
+                if (startData.status === 'error') {
+                    throw new Error('启动失败: ' + (startData.message || '未知错误'));
+                }
+                
+                // RAG主服务器已开始启动，动态端口由静态服务器管理
+                const dynamicPort = startData.port;
+                console.log('🎲 动态端口(由前哨管理，仅用于调试):', dynamicPort);
+                
+                status.textContent = `✅ RAG服务器正在启动，预计需要5-10秒...`;
+                
+                // 步骤4: 轮询检查RAG服务器状态（通过静态服务器代理）
+                let checkCount = 0;
+                const maxChecks = 30; // 最多检查30次（30秒）
+                
+                const checkInterval = setInterval(async () => {
+                    checkCount++;
+                    
+                    try {
+                        // 通过静态服务器检查RAG主服务器状态
+                        const statusResponse = await fetch('/api/status', {
+                            method: 'GET',
+                            cache: 'no-cache'
+                        });
+                        
+                        if (statusResponse.ok) {
+                            const statusData = await statusResponse.json();
+                            
+                            if (statusData.status === 'running') {
+                                // RAG服务器已就绪
+                                clearInterval(checkInterval);
+                                
+                                const modeName = document.querySelector('.mode-button.active').textContent;
+                                status.textContent = `✅ 系统已就绪！正在跳转到${modeName}...`;
+                                
+                                // 使用相对路径跳转到目标模式页面（由静态服务器托管）
+                                setTimeout(() => {
+                                    console.log(`准备跳转到: ${selectedMode}`);
+                                    window.location.href = selectedMode;
+                                }, 1000);
+                            } else {
+                                // 继续等待
+                                status.textContent = `⏳ RAG服务器启动中... (${checkCount}/${maxChecks})`;
+                            }
+                        } else {
+                            // 继续等待
+                            status.textContent = `⏳ RAG服务器启动中... (${checkCount}/${maxChecks})`;
+                        }
+                    } catch (e) {
+                        // RAG服务器还未响应，继续等待
+                        status.textContent = `⏳ RAG服务器启动中... (${checkCount}/${maxChecks})`;
+                        console.log('等待RAG服务器响应...', e.message);
+                    }
+                    
+                    // 超时处理
+                    if (checkCount >= maxChecks) {
+                        clearInterval(checkInterval);
+                        throw new Error('RAG服务器启动超时，请检查日志');
+                    }
+                }, 1000); // 每秒检查一次
+                
+            } catch (error) {
+                status.textContent = '❌ 启动失败: ' + error.message;
+                button.disabled = false;
+                button.textContent = '🔥 重新启动';
+                
+                // 记录错误到后端
+                try {
+                    await fetch('/api/error-report', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            error: error.message,
+                            stack: error.stack,
+                            timestamp: new Date().toISOString(),
+                            context: 'start.html - startBackend'
+                        })
+                    });
+                } catch (e) {
+                    console.error('错误报告发送失败:', e);
+                }
+                
+                // 记录错误到控制台
+                console.error('系统启动错误:', error);
+            }
+        }
+        
+        // 检查系统状态
+        async function checkStatus() {
+            try {
+                const response = await fetch('/api/health');
+                const status = await response.json();
+                document.getElementById('status').innerHTML = 
+                    `<span style="color: #4CAF50;">✅ 系统状态: ${status.status}</span><br>` +
+                    `<span style="opacity: 0.8;">🕐 时间: ${status.timestamp}</span><br>` +
+                    `<span style="opacity: 0.8;">💬 消息: ${status.message}</span>`;
+            } catch (error) {
+                console.log('状态检查失败:', error);
+                document.getElementById('status').innerHTML = 
+                    '<span style="color: #ff9800;">⚠️ 系统状态: 连接中...</span>';
+            }
+        }
+        
+        // 页面加载时检查状态
+        window.addEventListener('load', checkStatus);
+    </script>
+</body>
+</html>

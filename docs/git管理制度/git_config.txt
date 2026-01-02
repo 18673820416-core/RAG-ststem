@@ -1,0 +1,76 @@
+# 🔧 Git仓库配置信息
+# 重要提示：请妥善保管此文件，不要上传到公共仓库
+
+## 📋 仓库基本信息
+# 请在GitHub上创建仓库后填写以下信息：
+
+# GitHub仓库地址（请替换为你的实际仓库地址）
+GITHUB_REPO_URL="https://github.com/你的用户名/rag-system.git"
+
+# 仓库名称
+REPO_NAME="rag-system"
+
+# 主分支名称
+MAIN_BRANCH="main"
+
+## 🔑 访问配置
+# 如果你使用HTTPS方式（推荐）
+GITHUB_USERNAME="你的GitHub用户名"
+GITHUB_TOKEN="你的GitHub个人访问令牌"
+
+# 如果你使用SSH方式
+SSH_KEY_PATH="~/.ssh/id_rsa"
+
+## 📚 相关文档路径
+# Git管理制度文档位于：docs/git管理制度/
+# - Git提交规范指南.md
+# - Git回滚操作指南.md  
+# - README.md
+
+## 🚀 常用Git命令速查
+
+### 初始化远程仓库
+# 方法1：HTTPS方式（推荐）
+git remote add origin https://github.com/你的用户名/rag-system.git
+
+# 方法2：SSH方式
+git remote add origin git@github.com:你的用户名/rag-system.git
+
+### 首次推送
+git add .
+git commit -m "初始提交：RAG系统完整代码"
+git branch -M main
+git push -u origin main
+
+### 日常操作
+git status                    # 查看状态
+git add .                     # 添加所有更改
+git commit -m "提交信息"      # 提交更改
+git push                      # 推送到远程
+git pull                      # 拉取远程更新
+
+### 回滚操作
+git log --oneline -5          # 查看最近5次提交
+git reset --soft HEAD~1       # 软回滚（保留更改）
+git reset --hard HEAD~1       # 硬回滚（丢弃更改）
+git revert <commit_id>        # 安全回滚（创建新提交）
+
+## ⚠️ 安全提醒
+# 1. 不要在代码中硬编码敏感信息
+# 2. 定期更新GitHub Token
+# 3. 使用SSH密钥时妥善保管私钥
+# 4. 提交前检查是否包含敏感信息
+
+## 📞 问题排查
+# 如果推送失败，尝试：
+git pull origin main --rebase  # 先拉取并变基
+git push origin main           # 再推送
+
+# 如果冲突严重，可以强制推送（谨慎使用）
+git push origin main --force
+
+# 查看远程分支
+git branch -r
+
+# 查看所有分支
+git branch -a

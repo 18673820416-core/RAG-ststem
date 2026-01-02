@@ -1,0 +1,128 @@
+# 溯因推理引擎开发提示词
+# 来源：用户提供的完整组件开发需求
+# 时间：2025-11-22
+
+## 项目背景
+我正在构建一个AI认知系统，已经实现了根因分析器用于异常诊断。现在需要开发一个溯因推理引擎作为补充，两者应该协同工作但各有侧重。
+
+## 核心要求
+
+### 1. 引擎定位
+- **溯因引擎**：专注于从现象到最佳解释的推理过程，处理"什么是最可能的解释"
+- **根因分析器**：专注于系统异常的具体原因分析，处理"异常的根本原因是什么"
+- **两者关系**：溯因引擎提供推理框架，根因分析器提供领域具体实现
+
+### 2. 功能需求
+溯因推理引擎应具备：
+- 假设生成：从观察现象生成多个可能的解释假设
+- 证据收集：自动收集支持/反对各假设的证据
+- 最佳解释选择：基于证据强度选择最合理的解释
+- 置信度评估：为每个假设提供量化置信度
+- 推理链条构建：展示从现象到结论的完整推理路径
+
+### 3. 协作机制
+与根因分析器的调用关系：
+1. 输入层：溯因引擎接收原始异常现象
+2. 预处理：调用根因分析器获取初步原因列表
+3. 推理层：溯因引擎对原因进行逻辑验证和排序
+4. 输出层：返回经过溯因验证的根因分析结果
+
+数据流：现象 → 溯因引擎 → 根因分析器 → 溯因验证 → 最终结论
+
+## 技术规格
+
+### 接口设计
+```python
+class AbductiveEngine:
+    def generate_hypotheses(self, observations: List[Observation]) -> List[Hypothesis]
+    def collect_evidence(self, hypothesis: Hypothesis) -> EvidenceSet
+    def evaluate_hypotheses(self, hypotheses: List[Hypothesis]) -> RankedHypotheses
+    def get_best_explanation(self, observations: List[Observation]) -> Explanation
+    
+    # 与根因分析器的集成接口
+    def integrate_root_cause_analysis(self, rca_result: RootCauseResult) -> EnhancedResult
+```
+
+### 核心算法
+- 使用贝叶斯推理进行假设评估
+- 实现最佳解释推理（Inference to the Best Explanation, IBE）算法
+- 支持不确定推理和部分证据处理
+- 包含推理回溯和假设修正机制
+
+## 与根因分析器的协作要点
+
+### 1. 明确分工
+**溯因引擎负责：**
+- 推理框架和逻辑验证
+- 多假设管理和评估
+- 不确定性处理
+- 推理质量评估
+
+**根因分析器负责：**
+- 领域特定的原因识别
+- 系统依赖关系分析
+- 具体修复建议生成
+- 历史模式匹配
+
+### 2. 调用协议
+```python
+# 推荐的工作流程
+def analyze_with_collaboration(observations):
+    # 步骤1: 溯因引擎生成初步假设
+    hypotheses = abductive_engine.generate_hypotheses(observations)
+    
+    # 步骤2: 调用根因分析器进行领域分析
+    rca_results = root_cause_analyzer.analyze(observations, hypotheses)
+    
+    # 步骤3: 溯因引擎验证和优化结果
+    final_explanation = abductive_engine.evaluate_and_refine(rca_results)
+    
+    # 步骤4: 返回增强的分析结果
+    return {
+        'best_explanation': final_explanation,
+        'alternative_explanations': abductive_engine.get_alternatives(),
+        'confidence_score': abductive_engine.get_confidence(),
+        'reasoning_chain': abductive_engine.get_reasoning_chain()
+    }
+```
+
+### 3. 数据交换格式
+```python
+@dataclass
+class CollaborativeAnalysis:
+    observations: List[Observation]           # 输入现象
+    initial_hypotheses: List[Hypothesis]      # 溯因生成的假设
+    rca_findings: RootCauseFindings          # 根因分析结果
+    abductive_validation: ValidationResult   # 溯因验证结果
+    final_recommendation: Recommendation     # 最终建议
+    collaboration_metrics: CollaborationMetrics  # 协作效果指标
+```
+
+## 开发注意事项
+
+### 1. 避免功能重叠
+- 不要重复实现根因分析器已有的具体原因识别逻辑
+- 专注于推理过程和不确定性处理等通用能力
+- 确保两个引擎的职责边界清晰
+
+### 2. 性能考虑
+- 设计高效的假设空间搜索算法
+- 实现推理结果的缓存机制
+- 支持增量推理和实时更新
+
+### 3. 可扩展性
+- 设计插件式的证据收集器
+- 支持不同领域的推理规则
+- 提供配置化的置信度阈值
+
+### 4. 质量保证
+- 实现推理过程的可解释性输出
+- 包含推理质量评估指标
+- 支持人工反馈和学习机制
+
+## 验收标准
+- **功能完整性**：实现完整的溯因推理流程
+- **协作有效性**：与现有根因分析器无缝集成
+- **性能要求**：推理延迟在可接受范围内
+- **质量指标**：推理准确率比单独使用根因分析器提升15%以上
+- **可解释性**：提供清晰的推理链条和置信度说明

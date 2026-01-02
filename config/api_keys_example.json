@@ -1,0 +1,17 @@
+{
+  "qianwen": {
+    "key": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "description": "字节跳动千问API密钥（主LLM）",
+    "added_time": "2025-12-03"
+  },
+  "deepseek": {
+    "key": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "description": "DeepSeek API密钥（备用LLM）",
+    "added_time": "2025-12-03"
+  },
+  "openai": {
+    "key": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "description": "OpenAI GPT API密钥（可选）",
+    "added_time": "2025-12-03"
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "timestamp": "2025-12-18T20:13:50.087701",
+  "server_type": "rag_main",
+  "port": 5000,
+  "pid": 5592,
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "numpy_version": "2.2.6",
+  "opencv_version": "4.12.0",
+  "startup_logs": {
+    "total_logs": 73,
+    "logs": [
+      {
+        "timestamp": "2025-12-18 20:13:47,763",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "导入多智能体聊天室模块成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:47,764",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "导入时机选择策略引擎成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:47,770",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "导入记忆重构引擎成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:47,897",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "导入夜间维护调度器成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:47,901",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "开始启动RAG系统服务器... 端口: 5000, PID: 5592"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:47,901",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "程序开始执行，端口: 5000, PID: 5592"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:49,949",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "已向静态服务器注册实例, 端口=5000, PID=5592"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:49,949",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "全局PORT已设置为: 5000"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:49,950",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "进入start_server函数"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:49,950",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "初始化聊天室..."
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,034",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "✅ 从持久化存储加载了 111 个思维节点（真实数据）"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,037",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "⚠️ 默认服务商 qianwen 未配置，切换到 deepseek"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,038",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "通过发现机制创建智能体: system_architect_agent -> 系统管家"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,038",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "⚠️ 默认服务商 qianwen 未配置，切换到 deepseek"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,039",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "通过发现机制创建智能体: scheme_evaluator_agent -> 方案评估师"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,039",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "⚠️ 默认服务商 qianwen 未配置，切换到 deepseek"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,040",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "通过发现机制创建智能体: code_implementer_agent -> 文本实现师"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,040",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "⚠️ 默认服务商 qianwen 未配置，切换到 deepseek"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,040",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "⚠️ 默认服务商 qianwen 未配置，切换到 deepseek"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,058",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "⚠️  人脸识别功能已禁用（避免启动警告）"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,058",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "视觉处理引擎初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,061",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "音频处理引擎初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,062",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "多模态融合引擎初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,062",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "通过发现机制创建智能体: data_collector_agent -> 数据收集师"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,068",
+        "logger": "MultiAgentChatroom",
+        "level": "WARNING",
+        "message": "创建智能体 system_maintenance_agent 失败: BaseAgent.__init__() got an unexpected keyword argument 'use_three_layer_prompt'"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,068",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "通过智能体发现机制成功初始化 4 个智能体"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,068",
+        "logger": "AgentWindow_系统管家_window",
+        "level": "INFO",
+        "message": "记忆重构引擎初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,068",
+        "logger": "AgentWindow_系统管家_window",
+        "level": "INFO",
+        "message": "智能体独立对话窗口初始化完成: 系统管家 (acb08e31-438e-4520-a1bf-37e0c411745a)"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,068",
+        "logger": "AgentWindow_系统管家_window",
+        "level": "INFO",
+        "message": "上下文管理配置: 最大长度=128000, 压缩阈值=0.8"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,068",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "创建智能体对话窗口: 系统管家"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,069",
+        "logger": "AgentWindow_方案评估师_window",
+        "level": "INFO",
+        "message": "记忆重构引擎初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,069",
+        "logger": "AgentWindow_方案评估师_window",
+        "level": "INFO",
+        "message": "智能体独立对话窗口初始化完成: 方案评估师 (43515ff2-9456-4856-af79-a2733c04c8d3)"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,069",
+        "logger": "AgentWindow_方案评估师_window",
+        "level": "INFO",
+        "message": "上下文管理配置: 最大长度=128000, 压缩阈值=0.8"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,069",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "创建智能体对话窗口: 方案评估师"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,069",
+        "logger": "AgentWindow_文本实现师_window",
+        "level": "INFO",
+        "message": "记忆重构引擎初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,069",
+        "logger": "AgentWindow_文本实现师_window",
+        "level": "INFO",
+        "message": "智能体独立对话窗口初始化完成: 文本实现师 (70744992-3761-46bb-bf17-3546bcfa7d2a)"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,070",
+        "logger": "AgentWindow_文本实现师_window",
+        "level": "INFO",
+        "message": "上下文管理配置: 最大长度=128000, 压缩阈值=0.8"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,070",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "创建智能体对话窗口: 文本实现师"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,070",
+        "logger": "AgentWindow_数据收集师_window",
+        "level": "INFO",
+        "message": "记忆重构引擎初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,070",
+        "logger": "AgentWindow_数据收集师_window",
+        "level": "INFO",
+        "message": "智能体独立对话窗口初始化完成: 数据收集师 (59c261ff-ac8e-45bc-99d6-df0fa7df165e)"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,070",
+        "logger": "AgentWindow_数据收集师_window",
+        "level": "INFO",
+        "message": "上下文管理配置: 最大长度=128000, 压缩阈值=0.8"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,070",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "创建智能体对话窗口: 数据收集师"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,070",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "成功创建 4 个智能体对话窗口"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,073",
+        "logger": "MultiAgentChatroom",
+        "level": "INFO",
+        "message": "从交互日志恢复 10 条历史消息"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,073",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "多智能体聊天室初始化成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,073",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "多智能体聊天室初始化成功（main server）"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,073",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "初始化时机选择策略引擎..."
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,074",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "时机选择策略引擎初始化成功并启动监控"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,075",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "调度记忆重构任务..."
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,075",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "记忆重构任务已调度"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,075",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "设置服务器..."
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,075",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "创建TCPServer实例，监听 0.0.0.0:5000"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,075",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "TCPServer实例创建成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,075",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "后端服务状态已设置为active"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "RAG系统稳定版启动服务器，端口: 5000"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "  RAG系统稳定版已启动"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "\n⚠️  重要提示:"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "1. 端口号是您的系统安全密钥，请妥善保管"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "2. 如需查看端口号，请查看日志文件: logs/startup_status.json"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "3. 打开浏览器访问启动页面即可使用系统"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "\n🌙 正在启动夜间维护调度器..."
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,076",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "正在启动夜间维护调度器"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "🌙 夜间维护调度已启动 - 将在系统空闲时自动执行"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "🌙 注：每个任务每天只执行一次，通常在晚上22:00-6:00之间"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "✅ 夜间维护调度器已启动"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "   - 智能体将在系统空闲时（晚上22:00-6:00）自动写日记"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "   - 自动执行记忆重构和向量库更新"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "   - 明天可查看维护报告"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "夜间维护调度器启动成功"
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "stdout",
+        "level": "INFO",
+        "message": "\n🔍 开始更新全量启动状态JSON..."
+      },
+      {
+        "timestamp": "2025-12-18 20:13:50,077",
+        "logger": "rag_system",
+        "level": "INFO",
+        "message": "🔍 开始更新全量启动状态JSON..."
+      }
+    ],
+    "duplicates_detected": [
+      {
+        "message": "⚠️ 默认服务商 qianwen 未配置，切换到 deepseek",
+        "logger": "stdout",
+        "count": 5,
+        "timestamps": [
+          "2025-12-18 20:13:50,037",
+          "2025-12-18 20:13:50,038",
+          "2025-12-18 20:13:50,039",
+          "2025-12-18 20:13:50,040",
+          "2025-12-18 20:13:50,040"
+        ]
+      }
+    ],
+    "duplicate_count": 1
+  },
+  "modules": {
+    "chatroom_import_ok": true,
+    "timing_engine_import_ok": true,
+    "memory_reconstruct_import_ok": true,
+    "nightly_scheduler_import_ok": true
+  },
+  "agents": {
+    "count": 4,
+    "list": [
+      {
+        "name": "系统管家",
+        "role": "系统管家",
+        "agent_id": "manager_001"
+      },
+      {
+        "name": "方案评估师",
+        "role": "方案评估师",
+        "agent_id": "evaluator_001"
+      },
+      {
+        "name": "文本实现师",
+        "role": "文本实现师",
+        "agent_id": "implementer_001"
+      },
+      {
+        "name": "数据收集师",
+        "role": "数据收集师",
+        "agent_id": "data_collector_001"
+      }
+    ]
+  },
+  "vector_database": {
+    "total_memories": 1224,
+    "active_memories": 1224,
+    "archived_memories": 0,
+    "retired_memories": 0
+  },
+  "knowledge_graph": {
+    "total_nodes": 0,
+    "total_edges": 0,
+    "coverage_rate": 0,
+    "status": "pending_initialization"
+  },
+  "thought_engine": {
+    "total_nodes": 111,
+    "deduplication_rate": 90.93137254901961,
+    "status": "active"
+  },
+  "status": "active",
+  "startup_complete": true
+}

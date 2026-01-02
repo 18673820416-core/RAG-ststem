@@ -1,0 +1,2194 @@
+[
+  {
+    "id": "add_qianwen_key",
+    "name": "Add Qianwen Key",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Add Qianwen Key功能"
+      ]
+    },
+    "source_file": ".\\add_qianwen_key.py"
+  },
+  {
+    "id": "add_self_exposure_to_missing_files",
+    "name": "添加自曝光注释脚本",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "为缺少自曝光注释的文件添加基本的自曝光注释",
+        "自动检测缺少自曝光注释的文件",
+        "批量添加自曝光注释"
+      ]
+    },
+    "source_file": ".\\add_self_exposure_to_missing_files.py"
+  },
+  {
+    "id": "backend_api_analyzer",
+    "name": "Backend Api Analyzer",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Backend Api Analyzer功能"
+      ]
+    },
+    "source_file": ".\\backend_api_analyzer.py"
+  },
+  {
+    "id": "collect_self_exposures",
+    "name": "收集自曝光信息脚本",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "收集所有文件的自曝光信息",
+        "解析自曝光注释",
+        "生成自曝光信息汇总文件"
+      ]
+    },
+    "source_file": ".\\collect_self_exposures.py"
+  },
+  {
+    "id": "component_knowledge_graph",
+    "name": "Component Knowledge Graph",
+    "type": "frontend",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "组件知识图谱可视化"
+      ]
+    },
+    "source_file": ".\\component_knowledge_graph.html"
+  },
+  {
+    "id": "download_embedding_model",
+    "name": "Download Embedding Model",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Download Embedding Model功能"
+      ]
+    },
+    "source_file": ".\\download_embedding_model.py"
+  },
+  {
+    "id": "download_model",
+    "name": "Download Model",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Download Model功能"
+      ]
+    },
+    "source_file": ".\\download_model.py"
+  },
+  {
+    "id": "frontend_api_analyzer",
+    "name": "Frontend Api Analyzer",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Frontend Api Analyzer功能"
+      ]
+    },
+    "source_file": ".\\frontend_api_analyzer.py"
+  },
+  {
+    "id": "main",
+    "name": "Main",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Main功能"
+      ]
+    },
+    "source_file": ".\\main.py"
+  },
+  {
+    "id": "process_interaction_pages",
+    "name": "Process Interaction Pages",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "mesh_thought_engine",
+        "vector_database"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": "处理交互页面文件并存入向量库"
+    },
+    "source_file": ".\\process_interaction_pages.py"
+  },
+  {
+    "id": "quick_download",
+    "name": "Quick Download",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Quick Download功能"
+      ]
+    },
+    "source_file": ".\\quick_download.py"
+  },
+  {
+    "id": "rag_main_server",
+    "name": "RAG Main Server",
+    "type": "api",
+    "version": "1.1.0",
+    "needs": {
+      "deps": [
+        "vector_database",
+        "mesh_thought_engine",
+        "multi_agent_chatroom",
+        "memory_bubble_manager",
+        "event_dimension_encoder",
+        "induction_engine"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "RAG核心服务",
+        "多智能体协作",
+        "向量检索",
+        "认知引擎",
+        "前置主题归纳接入",
+        "评估任务下发"
+      ],
+      "endpoints": [
+        {
+          "path": "/api/text-blocks",
+          "method": "GET",
+          "desc": "获取文本块列表和关联关系"
+        },
+        {
+          "path": "/api/health",
+          "method": "GET",
+          "desc": "API健康检查"
+        },
+        {
+          "path": "/api/status",
+          "method": "GET",
+          "desc": "系统状态"
+        },
+        {
+          "path": "/api/agents",
+          "method": "GET",
+          "desc": "智能体列表"
+        },
+        {
+          "path": "/api/chatroom/status",
+          "method": "GET",
+          "desc": "聊天室状态"
+        },
+        {
+          "path": "/api/chatroom/message",
+          "method": "POST",
+          "desc": "发送聊天室消息"
+        }
+      ]
+    },
+    "source_file": ".\\rag_main_server.py"
+  },
+  {
+    "id": "reset_python_path",
+    "name": "Python环境变量重置脚本",
+    "type": "script",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "os",
+        "sys",
+        "winreg"
+      ],
+      "resources": [
+        "registry_access"
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "Python环境变量重置",
+        "路径清理",
+        "正确Python路径添加"
+      ]
+    },
+    "source_file": ".\\reset_python_path.py"
+  },
+  {
+    "id": "setup_stable_env",
+    "name": "RAG系统稳定环境配置脚本",
+    "type": "script",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "os",
+        "sys",
+        "subprocess",
+        "platform"
+      ],
+      "resources": [
+        "command_execution",
+        "file_system_access"
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "虚拟环境创建",
+        "稳定依赖安装",
+        "Python版本检查",
+        "环境配置指导"
+      ]
+    },
+    "source_file": ".\\setup_stable_env.py"
+  },
+  {
+    "id": "simple_fix",
+    "name": "Python环境变量简单修复脚本",
+    "type": "script",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "os",
+        "sys",
+        "winreg"
+      ],
+      "resources": [
+        "registry_access"
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "Python环境变量修复",
+        "错误路径移除"
+      ]
+    },
+    "source_file": ".\\simple_fix.py"
+  },
+  {
+    "id": "simple_qianwen_test",
+    "name": "Simple Qianwen Test",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Simple Qianwen Test功能"
+      ]
+    },
+    "source_file": ".\\simple_qianwen_test.py"
+  },
+  {
+    "id": "honeypot_server",
+    "name": "RAG System Server (Decoy)",
+    "type": "honeypot",
+    "version": "2.1.0",
+    "needs": {
+      "deps": [
+        "vector_database",
+        "mesh_thought_engine",
+        "multi_agent_chatroom"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "蜂蜜罐服务器",
+        "攻击者行为记录",
+        "误导性响应"
+      ],
+      "endpoints": [
+        {
+          "path": "/api/text-blocks",
+          "method": "GET",
+          "desc": "虚假文本块接口"
+        },
+        {
+          "path": "/api/health",
+          "method": "GET",
+          "desc": "虚假健康检查"
+        },
+        {
+          "path": "/api/status",
+          "method": "GET",
+          "desc": "虚假状态查询"
+        },
+        {
+          "path": "/api/agents",
+          "method": "GET",
+          "desc": "虚假智能体列表"
+        },
+        {
+          "path": "/api/chatroom/message",
+          "method": "POST",
+          "desc": "虚假消息接口"
+        }
+      ]
+    },
+    "source_file": ".\\stable_start_server.py"
+  },
+  {
+    "id": "start_page",
+    "name": "Start Page",
+    "type": "frontend",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "系统启动页面"
+      ]
+    },
+    "source_file": ".\\start.html"
+  },
+  {
+    "id": "static_server",
+    "name": "Static Web Server",
+    "type": "server",
+    "version": "2.0.0",
+    "needs": {
+      "deps": [
+        "system_maintenance_agent"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "静态页面托管",
+        "启动控制API",
+        "状态检查",
+        "前哨安全机制",
+        "端口管理"
+      ],
+      "endpoints": [
+        {
+          "path": "/",
+          "method": "GET",
+          "desc": "静态启动页面"
+        },
+        {
+          "path": "/api/start_backend",
+          "method": "POST",
+          "desc": "启动RAG主服务器"
+        },
+        {
+          "path": "/api/stop_backend",
+          "method": "POST",
+          "desc": "停止RAG主服务器"
+        },
+        {
+          "path": "/api/status",
+          "method": "GET",
+          "desc": "检查RAG主服务器状态"
+        },
+        {
+          "path": "/api/health",
+          "method": "GET",
+          "desc": "静态服务器健康检查"
+        },
+        {
+          "path": "/api/server/register",
+          "method": "POST",
+          "desc": "主服务器注册"
+        },
+        {
+          "path": "/api/server/unregister",
+          "method": "POST",
+          "desc": "主服务器注销"
+        },
+        {
+          "path": "/api/server/occupied-ports",
+          "method": "POST",
+          "desc": "查询占用端口"
+        },
+        {
+          "path": "/api/security/outpost-breach-test",
+          "method": "POST",
+          "desc": "前哨击穿模拟（测试）"
+        }
+      ]
+    },
+    "source_file": ".\\static_server.py"
+  },
+  {
+    "id": "temp_test",
+    "name": "Temp Test",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Temp Test功能"
+      ]
+    },
+    "source_file": ".\\temp_test.py"
+  },
+  {
+    "id": "verify_fix",
+    "name": "Python语法验证工具",
+    "type": "script",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "ast"
+      ],
+      "resources": [
+        "file_system_access"
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "Python语法检查",
+        "类定义统计",
+        "大括号平衡检查",
+        "Try-Except语句平衡检查"
+      ]
+    },
+    "source_file": ".\\verify_fix.py"
+  },
+  {
+    "id": "verify_qwen_key",
+    "name": "Verify Qwen Key",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Verify Qwen Key功能"
+      ]
+    },
+    "source_file": ".\\verify_qwen_key.py"
+  },
+  {
+    "id": "write_qianwen_key",
+    "name": "Write Qianwen Key",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Write Qianwen Key功能"
+      ]
+    },
+    "source_file": ".\\write_qianwen_key.py"
+  },
+  {
+    "id": "_test_qwen_internal",
+    "name": " Test Qwen Internal",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        " Test Qwen Internal功能"
+      ]
+    },
+    "source_file": ".\\_test_qwen_internal.py"
+  },
+  {
+    "id": "__init__",
+    "name": "  Init  ",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "  Init  功能"
+      ]
+    },
+    "source_file": ".\\__init__.py"
+  },
+  {
+    "id": "chat_api",
+    "name": "多智能体聊天室API",
+    "type": "api",
+    "version": "1.0.0",
+    "needs": {
+      "endpoints": [
+        {
+          "path": "/api/chatroom/history",
+          "method": "GET",
+          "desc": "获取聊天历史"
+        },
+        {
+          "path": "/api/chatroom/message",
+          "method": "POST",
+          "desc": "发送聊天消息"
+        },
+        {
+          "path": "/api/chatroom/status",
+          "method": "GET",
+          "desc": "获取聊天室状态"
+        }
+      ],
+      "deps": [
+        "src.multi_agent_chatroom",
+        "src.agent_manager",
+        "src.llm_client_enhanced"
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "多智能体交互",
+        "聊天历史管理",
+        "实时消息发送"
+      ]
+    },
+    "source_file": ".\\api\\chat_api.py"
+  },
+  {
+    "id": "deepseek_config",
+    "name": "Deepseek Config",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Deepseek Config功能"
+      ]
+    },
+    "source_file": ".\\config\\deepseek_config.py"
+  },
+  {
+    "id": "system_config",
+    "name": "System Config",
+    "type": "component",
+    "version": "1.1.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "System Config功能",
+        "User Preferences"
+      ]
+    },
+    "source_file": ".\\config\\system_config.py"
+  },
+  {
+    "id": "abductive_reasoning_engine",
+    "name": "Abductive Reasoning Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Abductive Reasoning Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\abductive_reasoning_engine.py"
+  },
+  {
+    "id": "agent_behavior_evaluator",
+    "name": "Agent Behavior Evaluator",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Behavior Evaluator功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_behavior_evaluator.py"
+  },
+  {
+    "id": "agent_communication",
+    "name": "Agent Communication",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Communication功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_communication.py"
+  },
+  {
+    "id": "agent_conversation_window",
+    "name": "Agent Conversation Window",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Conversation Window功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_conversation_window.py"
+  },
+  {
+    "id": "agent_discovery_engine",
+    "name": "Agent Discovery Engine",
+    "type": "component",
+    "version": "2.1.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "协议驱动的智能体发现",
+        "协议驱动的工具发现",
+        "支持相对导入",
+        "支持智能体自繁殖",
+        "BaseAgent特征验证",
+        "无需物理导入",
+        "嵌套JSON解析"
+      ],
+      "methods": {
+        "discover_agents": {
+          "signature": "() -> Dict[str, Dict]",
+          "description": "基于@self-expose协议发现智能体"
+        },
+        "discover_tools": {
+          "signature": "() -> Dict[str, Dict]",
+          "description": "基于@self-expose协议发现工具"
+        },
+        "_is_based_on_base_agent": {
+          "signature": "(provides: Dict, content: str) -> bool",
+          "description": "验证是否基于BaseAgent模板"
+        },
+        "_extract_agent_info_from_protocol": {
+          "signature": "(expose_data: Dict, file_path: Path, content: str) -> Optional[Dict]",
+          "description": "从协议提取智能体信息"
+        },
+        "_extract_tool_info_from_protocol": {
+          "signature": "(expose_data: Dict, file_path: Path, content: str) -> Optional[Dict]",
+          "description": "从协议提取工具信息"
+        },
+        "_extract_self_expose_protocol": {
+          "signature": "(content: str) -> List[str]",
+          "description": "提取文件中的@self-expose协议（支持嵌套JSON）"
+        }
+      }
+    },
+    "source_file": ".\\src\\agent_discovery_engine.py"
+  },
+  {
+    "id": "agent_error_handler",
+    "name": "Agent Error Handler",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Error Handler功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_error_handler.py"
+  },
+  {
+    "id": "agent_error_monitor",
+    "name": "Agent Error Monitor",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "error_decorator",
+        "agent_error_handler"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Error Monitor功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_error_monitor.py"
+  },
+  {
+    "id": "agent_feedback_collector",
+    "name": "Agent Feedback Collector",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Feedback Collector功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_feedback_collector.py"
+  },
+  {
+    "id": "agent_manager",
+    "name": "Agent Manager",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Manager功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_manager.py"
+  },
+  {
+    "id": "agent_reporting_mechanism",
+    "name": "Agent Reporting Mechanism",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Reporting Mechanism功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_reporting_mechanism.py"
+  },
+  {
+    "id": "agent_tool_integration",
+    "name": "Agent Tool Integration",
+    "type": "component",
+    "version": "1.6.0",
+    "needs": {
+      "deps": [
+        "memory_reconstruction_engine",
+        "mesh_thought_engine",
+        "multimodal_alignment_engine",
+        "multimodal_retrieval_engine",
+        "multimodal_fusion_engine",
+        "vision_processing_engine",
+        "audio_processing_engine",
+        "abductive_reasoning_engine",
+        "cognitive_barrier_break_engine",
+        "reasoning_engine"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Agent Tool Integration功能"
+      ]
+    },
+    "source_file": ".\\src\\agent_tool_integration.py"
+  },
+  {
+    "id": "approval_mechanism",
+    "name": "Approval Mechanism",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Approval Mechanism功能"
+      ]
+    },
+    "source_file": ".\\src\\approval_mechanism.py"
+  },
+  {
+    "id": "audio_processing_engine",
+    "name": "Audio Processing Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Audio Processing Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\audio_processing_engine.py"
+  },
+  {
+    "id": "base_agent",
+    "name": "Base Agent",
+    "type": "agent",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "agent_tool_integration",
+        "vector_database",
+        "llm_client",
+        "memory_bubble_manager"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "基础智能体能力",
+        "工具调用",
+        "记忆管理",
+        "泡泡系统",
+        "反馈系统"
+      ],
+      "methods": {
+        "respond": {
+          "signature": "(message: str) -> Dict[str, Any]",
+          "description": "处理用户消息并返回响应"
+        },
+        "call_tool": {
+          "signature": "(tool_name: str, parameters: Dict[str, Any]) -> Dict[str, Any]",
+          "description": "委托工具集成器调用具体工具"
+        },
+        "create_memory": {
+          "signature": "(content: str, memory_type: str, priority: str, tags: Optional[List[str]]) -> Optional[str]",
+          "description": "创建记忆条目并写入向量数据库"
+        },
+        "note_bubble": {
+          "signature": "(category: str, content: str, context: Optional[Dict], priority: str) -> Optional[str]",
+          "description": "快速记录记忆泡泡"
+        },
+        "write_daily_diary": {
+          "signature": "(cleanup_resolved: bool) -> Optional[str]",
+          "description": "写每日工作日记"
+        },
+        "submit_tool_feedback": {
+          "signature": "(tool_name: str, feedback_type: str, content: str, priority: str) -> Dict[str, Any]",
+          "description": "智能体主动提交工具反馈"
+        }
+      }
+    },
+    "source_file": ".\\src\\base_agent.py"
+  },
+  {
+    "id": "chat_engine",
+    "name": "Chat Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "vector_database",
+        "llm_client_enhanced",
+        "mesh_thought_engine"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Chat Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\chat_engine.py"
+  },
+  {
+    "id": "code_implementer_agent",
+    "name": "Code Implementer Agent",
+    "type": "agent",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "base_agent"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "文本实现",
+        "代码生成",
+        "代码审核",
+        "代码质量分析"
+      ],
+      "methods": {
+        "process_user_query": {
+          "signature": "(query: str) -> Dict[str, Any]",
+          "description": "处理用户查询"
+        }
+      }
+    },
+    "source_file": ".\\src\\code_implementer_agent.py"
+  },
+  {
+    "id": "collect_e_drive_data",
+    "name": "E盘数据收集器",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "data_collector"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "文件系统数据收集",
+        "智能文本切片",
+        "向量库数据保存"
+      ]
+    },
+    "source_file": ".\\src\\collect_e_drive_data.py"
+  },
+  {
+    "id": "database_manager",
+    "name": "Database Manager",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Database Manager功能"
+      ]
+    },
+    "source_file": ".\\src\\database_manager.py"
+  },
+  {
+    "id": "data_collector",
+    "name": "Data Collector",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Data Collector功能"
+      ]
+    },
+    "source_file": ".\\src\\data_collector.py"
+  },
+  {
+    "id": "data_collector_agent",
+    "name": "Data Collector Agent",
+    "type": "agent",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "base_agent"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "数据收集",
+        "数据源扫描",
+        "数据质量验证",
+        "数据报告生成"
+      ],
+      "methods": {
+        "process_user_query": {
+          "signature": "(query: str) -> Dict[str, Any]",
+          "description": "处理用户查询"
+        }
+      }
+    },
+    "source_file": ".\\src\\data_collector_agent.py"
+  },
+  {
+    "id": "dynamic_variable_system",
+    "name": "Dynamic Variable System",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Dynamic Variable System功能"
+      ]
+    },
+    "source_file": ".\\src\\dynamic_variable_system.py"
+  },
+  {
+    "id": "embedding_service",
+    "name": "Embedding Service",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "system_config",
+        "api_keys"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "文本向量化",
+        "多模型支持",
+        "批量编码",
+        "故障转移"
+      ],
+      "methods": {
+        "encode": {
+          "signature": "(text: str, provider: Optional[str]) -> Optional[List[float]]",
+          "description": "编码单个文本为向量"
+        },
+        "encode_batch": {
+          "signature": "(texts: List[str], provider: Optional[str]) -> List[List[float]]",
+          "description": "批量编码文本"
+        }
+      }
+    },
+    "source_file": ".\\src\\embedding_service.py"
+  },
+  {
+    "id": "enhanced_data_crawler",
+    "name": "Enhanced Data Crawler",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Enhanced Data Crawler功能"
+      ]
+    },
+    "source_file": ".\\src\\enhanced_data_crawler.py"
+  },
+  {
+    "id": "equality_law_evaluator",
+    "name": "Equality Law Evaluator",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Equality Law Evaluator功能"
+      ]
+    },
+    "source_file": ".\\src\\equality_law_evaluator.py"
+  },
+  {
+    "id": "error_decorator",
+    "name": "Error Decorator",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Error Decorator功能"
+      ]
+    },
+    "source_file": ".\\src\\error_decorator.py"
+  },
+  {
+    "id": "error_knowledge_base",
+    "name": "Error Knowledge Base",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Error Knowledge Base功能"
+      ]
+    },
+    "source_file": ".\\src\\error_knowledge_base.py"
+  },
+  {
+    "id": "error_reporting",
+    "name": "Error Reporting",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Error Reporting功能"
+      ]
+    },
+    "source_file": ".\\src\\error_reporting.py"
+  },
+  {
+    "id": "feedback_evaluator",
+    "name": "Feedback Evaluator",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Feedback Evaluator功能"
+      ]
+    },
+    "source_file": ".\\src\\feedback_evaluator.py"
+  },
+  {
+    "id": "folder_crawler",
+    "name": "Folder Crawler",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Folder Crawler功能"
+      ]
+    },
+    "source_file": ".\\src\\folder_crawler.py"
+  },
+  {
+    "id": "hierarchical_learning_engine",
+    "name": "Hierarchical Learning Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Hierarchical Learning Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\hierarchical_learning_engine.py"
+  },
+  {
+    "id": "hierarchical_retrieval_engine",
+    "name": "Hierarchical Retrieval Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Hierarchical Retrieval Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\hierarchical_retrieval_engine.py"
+  },
+  {
+    "id": "llm_client",
+    "name": "Llm Client",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Llm Client功能"
+      ]
+    },
+    "source_file": ".\\src\\llm_client.py"
+  },
+  {
+    "id": "llm_client_enhanced",
+    "name": "Llm Client Enhanced",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Llm Client Enhanced功能"
+      ]
+    },
+    "source_file": ".\\src\\llm_client_enhanced.py"
+  },
+  {
+    "id": "llm_validator",
+    "name": "Llm Validator",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Llm Validator功能"
+      ]
+    },
+    "source_file": ".\\src\\llm_validator.py"
+  },
+  {
+    "id": "memory_bubble_manager",
+    "name": "Memory Bubble Manager",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Memory Bubble Manager功能"
+      ]
+    },
+    "source_file": ".\\src\\memory_bubble_manager.py"
+  },
+  {
+    "id": "memory_organizer",
+    "name": "Memory Organizer",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Memory Organizer功能"
+      ]
+    },
+    "source_file": ".\\src\\memory_organizer.py"
+  },
+  {
+    "id": "mention_parser",
+    "name": "Mention Parser",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Mention Parser功能"
+      ]
+    },
+    "source_file": ".\\src\\mention_parser.py"
+  },
+  {
+    "id": "mesh_association_builder",
+    "name": "Mesh Association Builder",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Mesh Association Builder功能"
+      ]
+    },
+    "source_file": ".\\src\\mesh_association_builder.py"
+  },
+  {
+    "id": "mesh_database_interface",
+    "name": "Mesh Database Interface",
+    "type": "component",
+    "version": "1.1.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Mesh Database Interface功能",
+        "knowledge_graph.build",
+        "knowledge_graph.time_sequence",
+        "knowledge_graph.causal_edges"
+      ]
+    },
+    "source_file": ".\\src\\mesh_database_interface.py"
+  },
+  {
+    "id": "mesh_thought_engine",
+    "name": "Mesh Thought Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": [],
+      "data_formats": [
+        {
+          "name": "memory_unit",
+          "id_pattern": "mem_*",
+          "fields": [
+            "id",
+            "topic",
+            "content",
+            "source_type",
+            "timestamp",
+            "importance",
+            "confidence",
+            "tags",
+            "vector"
+          ]
+        }
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "Mesh Thought Engine功能",
+        "思维节点管理",
+        "关联关系建立",
+        "隐藏关系发现",
+        "关系强度计算"
+      ],
+      "data_formats": [
+        {
+          "name": "thought_node",
+          "id_pattern": "node_*",
+          "fields": [
+            "id",
+            "content",
+            "vector",
+            "metadata",
+            "connections",
+            "importance",
+            "content_hash"
+          ]
+        }
+      ]
+    },
+    "source_file": ".\\src\\mesh_thought_engine.py"
+  },
+  {
+    "id": "multimodal_alignment_engine",
+    "name": "Multimodal Alignment Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Multimodal Alignment Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\multimodal_alignment_engine.py"
+  },
+  {
+    "id": "multimodal_fusion_engine",
+    "name": "Multimodal Fusion Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Multimodal Fusion Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\multimodal_fusion_engine.py"
+  },
+  {
+    "id": "multimodal_retrieval_engine",
+    "name": "Multimodal Retrieval Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "src.hierarchical_retrieval_engine"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "多模态数据索引",
+        "跨模态检索",
+        "多模态相似度计算",
+        "检索结果融合"
+      ],
+      "methods": {
+        "index_item": "索引项目",
+        "retrieve": "多模态检索"
+      }
+    },
+    "source_file": ".\\src\\multimodal_retrieval_engine.py"
+  },
+  {
+    "id": "multi_agent_chatroom",
+    "name": "Multi Agent Chatroom",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "agent_conversation_window",
+        "agent_error_handler",
+        "system_architect_agent",
+        "scheme_evaluator_agent",
+        "mention_parser",
+        "error_decorator",
+        "agent_discovery_engine",
+        "data_collector_agent",
+        "code_implementer_agent"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Multi Agent Chatroom功能"
+      ]
+    },
+    "source_file": ".\\src\\multi_agent_chatroom.py"
+  },
+  {
+    "id": "multi_layer_graph_manager",
+    "name": "Multi Layer Graph Manager",
+    "type": "component",
+    "version": "1.1.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Multi Layer Graph Manager功能",
+        "knowledge_graph.search_across_layers",
+        "knowledge_graph.get_layer_navigation"
+      ]
+    },
+    "source_file": ".\\src\\multi_layer_graph_manager.py"
+  },
+  {
+    "id": "nightly_maintenance_scheduler",
+    "name": "Nightly Maintenance Scheduler",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "timing_strategy_engine",
+        "memory_reconstruction_engine",
+        "agent_manager",
+        "base_agent"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "夜间自动维护",
+        "记忆重构调度",
+        "智能体日记管理",
+        "系统维护报告"
+      ]
+    },
+    "source_file": ".\\src\\nightly_maintenance_scheduler.py"
+  },
+  {
+    "id": "path_utils",
+    "name": "路径处理工具",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "os",
+        "pathlib"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "路径解析",
+        "特殊字符处理",
+        "目录访问"
+      ]
+    },
+    "source_file": ".\\src\\path_utils.py"
+  },
+  {
+    "id": "problem_diagnostics",
+    "name": "问题诊断模块",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "os",
+        "sys",
+        "pathlib",
+        "datetime",
+        "logging"
+      ],
+      "resources": [
+        "path_utils",
+        "error_handler",
+        "error_knowledge_base"
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "问题检测",
+        "系统诊断",
+        "报告生成",
+        "修复建议"
+      ]
+    },
+    "source_file": ".\\src\\problem_diagnostics.py"
+  },
+  {
+    "id": "scheme_evaluator_agent",
+    "name": "Scheme Evaluator Agent",
+    "type": "agent",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "base_agent"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "方案评估",
+        "平等律评估",
+        "系统分析",
+        "参与者评分"
+      ],
+      "methods": {
+        "process_user_query": {
+          "signature": "(query: str) -> Dict[str, Any]",
+          "description": "处理用户查询"
+        }
+      }
+    },
+    "source_file": ".\\src\\scheme_evaluator_agent.py"
+  },
+  {
+    "id": "simple_test",
+    "name": "Simple Test",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Simple Test功能"
+      ]
+    },
+    "source_file": ".\\src\\simple_test.py"
+  },
+  {
+    "id": "system_architect_agent",
+    "name": "System Architect Agent",
+    "type": "agent",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "base_agent"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "系统架构设计",
+        "RAG架构优化",
+        "技术决策",
+        "系统管理"
+      ],
+      "methods": {
+        "process_user_query": {
+          "signature": "(query: str) -> Dict[str, Any]",
+          "description": "基于记忆优先的RAG工作流程处理用户查询"
+        }
+      }
+    },
+    "source_file": ".\\src\\system_architect_agent.py"
+  },
+  {
+    "id": "system_iteration_engine",
+    "name": "System Iteration Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "System Iteration Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\system_iteration_engine.py"
+  },
+  {
+    "id": "system_maintenance_agent",
+    "name": "System Maintenance Agent",
+    "type": "agent",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "base_agent",
+        "agent_error_handler",
+        "agent_error_monitor",
+        "agent_behavior_evaluator",
+        "self_expose_protocol"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "系统健康监控",
+        "故障诊断分析",
+        "自主修复决策",
+        "配置完整性校验",
+        "系统优化建议"
+      ],
+      "methods": {
+        "process_user_query": {
+          "signature": "(query: str) -> Dict[str, Any]",
+          "description": "处理用户查询和系统维护请求"
+        },
+        "monitor_system_health": {
+          "signature": "() -> Dict[str, Any]",
+          "description": "执行系统健康巡检"
+        },
+        "diagnose_error": {
+          "signature": "(error_data: Dict) -> Dict[str, Any]",
+          "description": "诊断系统错误"
+        },
+        "auto_fix": {
+          "signature": "(error_data: Dict) -> Dict[str, Any]",
+          "description": "自动修复系统错误"
+        }
+      }
+    },
+    "source_file": ".\\src\\system_maintenance_agent.py"
+  },
+  {
+    "id": "system_monitor",
+    "name": "System Monitor",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "System Monitor功能"
+      ]
+    },
+    "source_file": ".\\src\\system_monitor.py"
+  },
+  {
+    "id": "temporary_agent",
+    "name": "Temporary Agent",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Temporary Agent功能"
+      ]
+    },
+    "source_file": ".\\src\\temporary_agent.py"
+  },
+  {
+    "id": "timing_strategy_engine",
+    "name": "Timing Strategy Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Timing Strategy Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\timing_strategy_engine.py"
+  },
+  {
+    "id": "tool_discovery_engine",
+    "name": "Tool Discovery Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Tool Discovery Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\tool_discovery_engine.py"
+  },
+  {
+    "id": "tool_registry_manager",
+    "name": "Tool Registry Manager",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Tool Registry Manager功能"
+      ]
+    },
+    "source_file": ".\\src\\tool_registry_manager.py"
+  },
+  {
+    "id": "tool_review_api",
+    "name": "Tool Review Api",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Tool Review Api功能"
+      ]
+    },
+    "source_file": ".\\src\\tool_review_api.py"
+  },
+  {
+    "id": "tool_review_manager",
+    "name": "Tool Review Manager",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Tool Review Manager功能"
+      ]
+    },
+    "source_file": ".\\src\\tool_review_manager.py"
+  },
+  {
+    "id": "unified_memory_system",
+    "name": "Unified Memory System",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Unified Memory System功能"
+      ]
+    },
+    "source_file": ".\\src\\unified_memory_system.py"
+  },
+  {
+    "id": "vector_database",
+    "name": "Vector Database",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "database_manager"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Vector Database功能",
+        "存储和检索记忆单元",
+        "向量相似性搜索",
+        "记忆管理"
+      ],
+      "data_formats": [
+        {
+          "name": "memory_unit",
+          "id_pattern": "mem_*",
+          "fields": [
+            "id",
+            "topic",
+            "content",
+            "source_type",
+            "timestamp",
+            "importance",
+            "confidence",
+            "tags",
+            "vector"
+          ]
+        }
+      ]
+    },
+    "source_file": ".\\src\\vector_database.py"
+  },
+  {
+    "id": "vision_processing_engine",
+    "name": "视觉处理引擎",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": [
+        "模型目录",
+        "OpenCV级联分类器",
+        "图像文件",
+        "Base64图像数据",
+        "配置对象",
+        "结果对象"
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "初始化视觉模型",
+        "加载图像文件",
+        "从Base64数据加载图像",
+        "调整图像大小",
+        "提取图像特征",
+        "计算图像锐度",
+        "计算颜色直方图",
+        "检测边缘",
+        "分析纹理特征",
+        "检测图像中的对象",
+        "检测人脸",
+        "检测基本形状",
+        "检测颜色区域",
+        "综合分析图像",
+        "生成分析摘要",
+        "支持多种图像格式",
+        "支持图像大小限制",
+        "支持多种操作类型",
+        "支持智能体集成"
+      ]
+    },
+    "source_file": ".\\src\\vision_processing_engine.py"
+  },
+  {
+    "id": "cognitive_barrier_break_engine",
+    "name": "Cognitive Barrier Break Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Cognitive Barrier Break Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\cognitive_engines\\cognitive_barrier_break_engine.py"
+  },
+  {
+    "id": "memory_reconstruction_engine",
+    "name": "Memory Reconstruction Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Memory Reconstruction Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\cognitive_engines\\memory_reconstruction_engine.py"
+  },
+  {
+    "id": "reasoning_engine",
+    "name": "Reasoning Engine",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Reasoning Engine功能"
+      ]
+    },
+    "source_file": ".\\src\\cognitive_engines\\reasoning_engine.py"
+  },
+  {
+    "id": "test-crawler_wrapper",
+    "name": "Test-Crawler Wrapper",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Test-Crawler Wrapper功能"
+      ]
+    },
+    "source_file": ".\\src\\tools\\external\\test-crawler_wrapper.py"
+  },
+  {
+    "id": "base_agent_chat",
+    "name": "Base Agent Chat Interface",
+    "type": "frontend",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "stable_start_server",
+        "base_agent"
+      ],
+      "endpoints": [
+        {
+          "path": "/api/agent-template/message",
+          "method": "POST"
+        },
+        {
+          "path": "/api/upload",
+          "method": "POST"
+        }
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "基类智能体交互界面",
+        "文件上传",
+        "思考步骤显示",
+        "错误报告"
+      ]
+    },
+    "source_file": ".\\templates\\base_agent_chat.html"
+  },
+  {
+    "id": "multi_agent_chatroom",
+    "name": "Multi-Agent Chatroom Interface",
+    "type": "frontend",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "stable_start_server",
+        "multi_agent_chatroom"
+      ],
+      "endpoints": [
+        {
+          "path": "/api/chatroom/message",
+          "method": "POST"
+        },
+        {
+          "path": "/api/chatroom/history",
+          "method": "GET"
+        },
+        {
+          "path": "/api/chatroom/status",
+          "method": "GET"
+        }
+      ]
+    },
+    "provides": {
+      "capabilities": [
+        "多智能体聊天室界面",
+        "智能体列表显示",
+        "方法论洞察",
+        "工具使用跟踪"
+      ]
+    },
+    "source_file": ".\\templates\\chatroom.html"
+  },
+  {
+    "id": "chat_tools",
+    "name": "Chat Tools",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Chat Tools功能"
+      ]
+    },
+    "source_file": ".\\tools\\chat_tools.py"
+  },
+  {
+    "id": "data_crawler",
+    "name": "Data Crawler",
+    "type": "component",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "Data Crawler功能"
+      ]
+    },
+    "source_file": ".\\tools\\data_crawler.py"
+  },
+  {
+    "id": "import_api_keys_from_txt",
+    "name": "API Keys Import Tool",
+    "type": "tool",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [
+        "config.api_keys"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "从TXT文件导入API密钥",
+        "支持多种格式",
+        "持久化存储"
+      ],
+      "methods": {
+        "parse_line": "解析密钥行",
+        "main": "主导入函数"
+      }
+    },
+    "source_file": ".\\tools\\import_api_keys_from_txt.py"
+  },
+  {
+    "id": "induction_engine",
+    "name": "Induction Engine",
+    "type": "tool",
+    "version": "1.0.0",
+    "needs": {
+      "deps": [],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "topic_induction",
+        "event_extraction",
+        "keypoint_extraction",
+        "batch_process"
+      ]
+    },
+    "source_file": ".\\tools\\induction_engine.py"
+  },
+  {
+    "id": "memory_slicer_tool",
+    "name": "多层次自适应分片工具",
+    "type": "tool",
+    "version": "2.1.0",
+    "needs": {
+      "deps": [
+        "src.memory_bubble_manager",
+        "src.cognitive_engines.memory_reconstruction_engine"
+      ],
+      "resources": []
+    },
+    "provides": {
+      "capabilities": [
+        "多层次自适应分片策略",
+        "信息熵递归分片",
+        "LLM精炼改写",
+        "困惑度复合分片",
+        "层级编码管理",
+        "分片失败泡泡记录"
+      ],
+      "methods": [
+        "slice_text",
+        "parse_slice_id",
+        "get_slice_hierarchy",
+        "hierarchical_retrieval"
+      ]
+    },
+    "source_file": ".\\tools\\memory_slicer_tool.py"
+  }
+]

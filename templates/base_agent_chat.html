@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<!-- @self-expose: {"id": "base_agent_chat", "name": "Base Agent Chat Interface", "type": "frontend", "version": "1.0.1", "needs": {"deps": ["stable_start_server", "base_agent"], "endpoints": [{"path": "/api/agent-template/message", "method": "POST"}, {"path": "/api/upload", "method": "POST"}]}, "provides": {"capabilities": ["基类智能体交互界面", "文件上传", "思考步骤显示", "错误报告"]}} -->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG智能聊天机器人 - 基类智能体交互页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 1200px;
+            height: calc(100vh - 40px);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+        }
+
+        .toggle-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .toggle-button.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .toggle-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .back-button {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .welcome-message {
+            background: rgba(79, 172, 254, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            line-height: 1.4;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.assistant {
+            align-self: flex-start;
+            background: rgba(245, 245, 245, 0.8);
+            color: #333;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message.system {
+            align-self: center;
+            background: rgba(255, 255, 255, 0.8);
+            color: #666;
+            font-size: 0.9em;
+            max-width: 90%;
+        }
+
+        .message .timestamp {
+            font-size: 0.75em;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .message.assistant .timestamp {
+            text-align: left;
+        }
+
+        /* 思考步骤样式 */
+        .thinking-steps {
+            padding: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            margin: 10px 20px;
+            border-left: 3px solid #667eea;
+        }
+
+        .thinking-steps h3 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        .thinking-step {
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #667eea;
+            min-width: 20px;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-timestamp {
+            font-size: 0.8em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        /* 组合输入区域样式 */
+        .chat-input {
+            padding: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .combined-input-area {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-with-buttons {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        /* 文件拖拽上传样式 */
+        .drag-drop-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px dashed transparent;
+            border-radius: 10px;
+            pointer-events: none;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .drag-drop-area.dragover {
+            border-color: #4facfe;
+            background-color: rgba(79, 172, 254, 0.2);
+            pointer-events: auto;
+        }
+
+        /* 上传按钮容器 */
+        .upload-buttons {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+        }
+
+        /* 隐藏文件输入 */
+        .hidden {
+            display: none;
+        }
+
+        /* 输入框样式调整 */
+        .chat-input textarea {
+            flex: 1;
+            padding: 12px 20px;
+            padding-right: 180px; /* 为右侧按钮留出空间 */
+            border: none;
+            border-radius: 10px;
+            background: rgba(245, 245, 245, 0.8);
+            color: #333;
+            font-size: 1em;
+            outline: none;
+            resize: vertical;
+            min-height: 120px; /* 6行高 */
+            max-height: 300px;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .chat-input textarea:focus {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .chat-input textarea::placeholder {
+            color: rgba(51, 51, 51, 0.6);
+        }
+
+        /* 发送按钮样式 */
+        .send-button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .send-button:active {
+            transform: translateY(0);
+        }
+
+        /* 左边栏样式 */
+        .left-sidebar {
+            width: 300px;
+            background: rgba(245, 245, 245, 0.9);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .sidebar-header {
+            padding: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .sidebar-header h3 {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .block-stats {
+            font-size: 0.9em;
+            color: #4facfe;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+        
+        .refresh-time {
+            font-size: 0.8em;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .sidebar-content {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        .sidebar-footer {
+            padding: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .refresh-btn {
+            width: 100%;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        
+        .refresh-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 文本块列表样式 */
+        .block-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .text-block {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .text-block:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .block-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 0.95em;
+        }
+        
+        .block-content {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-clamp: 3;
+        }
+        
+        .block-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75em;
+            color: #999;
+        }
+        
+        .block-connections {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #eee;
+            font-size: 0.8em;
+        }
+        
+        .connection-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border-radius: 10px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.75em;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        /* 主内容区域布局 */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+        
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .left-sidebar {
+                width: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 95%;
+                height: 95vh;
+                border-radius: 10px;
+            }
+            
+            .left-sidebar {
+                display: none;
+            }
+            
+            .message {
+                max-width: 85%;
+            }
+            
+            .chat-header h1 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-content">
+                <h1>RAG智能助手</h1>
+                <div class="subtitle">基于基类智能体的AI助手</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <!-- 左边栏 - 文本块关联展示 -->
+            <div class="left-sidebar">
+                <div class="sidebar-header">
+                    <h3>📊 文本块关联</h3>
+                    <div class="block-stats">
+                        <span id="totalBlocks">0</span> 个文本块 · <span id="totalConnections">0</span> 条关联
+                    </div>
+                    <span class="refresh-time" id="refreshTime"></span>
+                </div>
+                <div class="sidebar-content">
+                    <div class="block-list" id="blockList">
+                        <div class="loading">加载中文本块数据...</div>
+                    </div>
+                </div>
+                <div class="sidebar-footer">
+                    <button class="refresh-btn" onclick="refreshTextBlocks()">🔄 手动刷新</button>
+                </div>
+            </div>
+            
+            <!-- 聊天区域 -->
+            <div class="chat-area">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <p>💡 你好！我是基于RAG系统的智能助手</p>
+                        <p>我可以：检索记忆、读取文件、搜索信息、优化知识库</p>
+                        <p>开始和我对话吧！</p>
+                    </div>
+                </div>
+                
+                <!-- 思考步骤显示区域 -->
+                <div class="thinking-steps" id="thinkingSteps" style="display: none;">
+                    <h3>🤔 智能体思考步骤</h3>
+                    <div id="stepsContent"></div>
+                </div>
+                
+                <div class="chat-input">
+                    <div class="combined-input-area">
+                        <div class="drag-drop-area" id="dragDropArea"></div>
+                        
+                        <div class="input-with-buttons">
+                            <textarea 
+                                id="userInput" 
+                                placeholder="输入您的消息...或拖拽文件到此处上传" 
+                                autocomplete="off"
+                                rows="6"
+                            ></textarea>
+                            
+                            <div class="upload-buttons">
+                                <button class="send-button" onclick="document.getElementById('fileInput').click()" title="选择文件">
+                                    📄
+                                </button>
+                                <button class="send-button" onclick="document.getElementById('imageInput').click()" title="选择图片">
+                                    🖼️
+                                </button>
+                                <button class="send-button" onclick="handleTakeScreenshot()" title="截图">
+                                    ✂️
+                                </button>
+                                <button class="send-button" onclick="sendMessage()" title="发送消息">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <input type="file" id="fileInput" class="hidden" accept="*/*" onchange="handleFileUpload(this.files)">
+                        <input type="file" id="imageInput" class="hidden" accept="image/*" onchange="handleImageUpload(this.files)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/screenshot.js"></script>
+    <script>
+        // 二级报错机制 - 组件级错误上报
+        class ChatBotErrorReporter {
+            constructor() {
+                this.sessionId = this.generateSessionId();
+                this.userActionPath = [];
+                this.initializeErrorHandling();
+            }
+            
+            generateSessionId() {
+                return 'session-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+            }
+            
+            generateErrorId() {
+                return 'error-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+            }
+            
+            initializeErrorHandling() {
+                // 捕获全局JavaScript错误
+                window.addEventListener('error', (event) => {
+                    this.reportComponentError(event.error, 'ChatInterface', 'global', {
+                        userActionPath: this.userActionPath.slice(-10),
+                        eventType: 'global_error',
+                        url: event.filename,
+                        line: event.lineno,
+                        column: event.colno
+                    });
+                });
+                
+                // 捕获未处理的Promise拒绝
+                window.addEventListener('unhandledrejection', (event) => {
+                    this.reportComponentError(event.reason, 'ChatInterface', 'promise', {
+                        userActionPath: this.userActionPath.slice(-10),
+                        eventType: 'unhandled_promise',
+                        promise: event.promise
+                    });
+                });
+            }
+            
+            // 记录用户操作路径
+            recordUserAction(action) {
+                this.userActionPath.push({
+                    action: action,
+                    timestamp: new Date().toISOString()
+                });
+                // 只保留最近100个操作
+                if (this.userActionPath.length > 100) {
+                    this.userActionPath.shift();
+                }
+            }
+            
+            // 组件级错误上报
+            reportComponentError(error, componentName, functionName, context) {
+                const componentError = {
+                    error_id: this.generateErrorId(),
+                    level: "component",
+                    type: error.name || 'Error',
+                    message: error.message || '未知错误',
+                    timestamp: new Date().toISOString(),
+                    component: componentName,
+                    function: functionName,
+                    file_path: window.location.href,
+                    line_number: error.lineNumber || "unknown",
+                    stack_trace: error.stack || "无堆栈信息",
+                    context: {
+                        ...context,
+                        session_id: this.sessionId,
+                        user_agent: navigator.userAgent,
+                        url: window.location.href
+                    },
+                    severity: "error",
+                    session_id: this.sessionId,
+                    user_action_path: this.userActionPath.slice(-10)
+                };
+                
+                console.error('组件级错误:', componentError);
+                
+                // 上报到系统级错误处理API
+                this.reportToSystem(componentError);
+            }
+            
+            // 系统级错误上报
+            reportSystemError(systemError) {
+                const fullSystemError = {
+                    error_id: this.generateErrorId(),
+                    level: "system",
+                    type: systemError.type || 'system_error',
+                    message: systemError.message || '系统错误',
+                    timestamp: new Date().toISOString(),
+                    affected_components: systemError.affected_components || ['ChatInterface'],
+                    severity: systemError.severity || 'error',
+                    component_errors: systemError.component_errors || [],
+                    system_state: {
+                        cpu_usage: 'unknown',
+                        memory_usage: 'unknown',
+                        disk_usage: 'unknown',
+                        browser_memory: performance.memory ? Math.round(performance.memory.usedJSHeapSize / 1024 / 1024) + 'MB' : 'unknown'
+                    },
+                    impact: systemError.impact || '聊天功能受影响',
+                    session_id: this.sessionId
+                };
+                
+                console.error('系统级错误:', fullSystemError);
+                
+                // 上报到系统级错误处理API
+                this.reportToSystem(fullSystemError);
+            }
+            
+            // 上报到系统API
+            async reportToSystem(errorData) {
+                try {
+                    await fetch('/api/error-report', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(errorData)
+                    });
+                    console.log('错误已上报到系统');
+                } catch (reportError) {
+                    console.error('错误上报失败:', reportError);
+                    // 失败时保存到本地存储
+                    this.saveToLocalStorage(errorData);
+                }
+            }
+            
+            // 保存到本地存储
+            saveToLocalStorage(errorData) {
+                try {
+                    const storedErrors = JSON.parse(localStorage.getItem('chatbot_errors') || '[]');
+                    storedErrors.push(errorData);
+                    // 只保留最近50个错误
+                    if (storedErrors.length > 50) {
+                        storedErrors.splice(0, storedErrors.length - 50);
+                    }
+                    localStorage.setItem('chatbot_errors', JSON.stringify(storedErrors));
+                } catch (e) {
+                    console.error('本地存储错误保存失败:', e);
+                }
+            }
+        }
+        
+        // 初始化错误报告器
+        const errorReporter = new ChatBotErrorReporter();
+        
+        // 添加消息到聊天窗口
+        function addMessage(role, content) {
+            try {
+                const chatMessages = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${role}`;
+                
+                const now = new Date();
+                const timestamp = now.toLocaleString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                
+                messageDiv.innerHTML = `
+                    <div>${content}</div>
+                    <div class="timestamp">${timestamp}</div>
+                `;
+                
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                errorReporter.recordUserAction(`addMessage: ${role}`);
+                
+                // 保存对话历史到本地存储
+                saveConversationHistory();
+            } catch (error) {
+                errorReporter.reportComponentError(error, 'ChatInterface', 'addMessage', {
+                    role: role,
+                    content: content
+                });
+                // 显示错误消息给用户
+                const chatMessages = document.getElementById('chatMessages');
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'message system';
+                errorDiv.innerHTML = `
+                    <div>⚠️ 系统出现错误，请稍后重试</div>
+                    <div class="timestamp">${new Date().toLocaleString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })}</div>
+                `;
+                chatMessages.appendChild(errorDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // 保存对话历史到本地存储
+                saveConversationHistory();
+            }
+        }
+        
+        // 发送消息
+        async function sendMessage() {
+            try {
+                const userInput = document.getElementById('userInput');
+                const message = userInput.value.trim();
+                
+                if (!message) return;
+                
+                // 记录用户操作
+                errorReporter.recordUserAction('sendMessage: ' + message.slice(0, 20) + (message.length > 20 ? '...' : ''));
+                
+                // 清空输入框
+                userInput.value = '';
+                
+                // 添加用户消息到聊天窗口
+                addMessage('user', message);
+                
+                // 显示思考步骤区域
+                showThinkingSteps();
+                
+                // 调用智能体模板API
+                const response = await fetch('/api/agent-template/message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+                
+                const data = await response.json();
+                
+                // 渲染真实的思维步骤（来自后端）
+                if (data.thinking_steps && data.thinking_steps.length > 0) {
+                    data.thinking_steps.forEach((step, index) => {
+                        addThinkingStep(index + 1, step.content);
+                    });
+                }
+                
+                if (data.success) {
+                    // 获取智能体回复
+                    const assistantResponse = data.agent_responses[0].content;
+                    addMessage('assistant', assistantResponse);
+                } else {
+                    addMessage('assistant', `抱歉，我暂时无法回答您的问题。错误信息：${data.error || '未知错误'}`);
+                    
+                    // 上报API错误
+                    errorReporter.reportComponentError(new Error(data.error || 'API调用失败'), 'ChatInterface', 'sendMessage', {
+                        api_response: data,
+                        message: message
+                    });
+                }
+                
+                // 隐藏思考步骤区域
+                hideThinkingSteps();
+            } catch (error) {
+                console.error('发送消息失败:', error);
+                addMessage('assistant', '抱歉，连接服务器失败，请稍后重试。');
+                
+                // 上报网络或其他错误
+                errorReporter.reportComponentError(error, 'ChatInterface', 'sendMessage', {
+                    message: document.getElementById('userInput').value
+                });
+                
+                // 隐藏思考步骤区域
+                hideThinkingSteps();
+            }
+        }
+        
+        // 自动调整文本框高度
+        function autoResizeTextarea() {
+            const textarea = document.getElementById('userInput');
+            textarea.style.height = 'auto';
+            textarea.style.height = Math.min(textarea.scrollHeight, 300) + 'px';
+        }
+        
+        // 监听回车键
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+        
+        // 自动调整文本框高度
+        document.getElementById('userInput').addEventListener('input', autoResizeTextarea);
+        
+        // 页面加载完成后记录操作
+        window.addEventListener('load', function() {
+            errorReporter.recordUserAction('page_loaded');
+            
+            // 加载对话历史
+            loadConversationHistory();
+            
+            // 初始化拖拽功能
+            initializeDragDrop();
+            
+            // 初始化文本块左边栏
+            initializeTextBlocksSidebar();
+        });
+        
+        // 初始化文本块左边栏
+        function initializeTextBlocksSidebar() {
+            // 首次加载文本块数据
+            refreshTextBlocks();
+            
+            // 设置定时器，每5分钟刷新一次
+            setInterval(refreshTextBlocks, 5 * 60 * 1000);
+        }
+        
+        // 刷新文本块数据
+        async function refreshTextBlocks() {
+            try {
+                // 调用API获取文本块数据
+                const response = await fetch('/api/text-blocks');
+                const data = await response.json();
+                
+                if (data.success) {
+                    // 更新文本块列表，传递总数统计
+                    updateTextBlocksList(data.blocks, data.count, data.total_connections);
+                    
+                    // 更新刷新时间
+                    updateRefreshTime();
+                } else {
+                    console.error('获取文本块数据失败:', data.error);
+                    showBlockLoadingError();
+                }
+            } catch (error) {
+                console.error('获取文本块数据时发生网络错误:', error);
+                showBlockLoadingError();
+            }
+        }
+        
+        // 更新文本块列表
+        function updateTextBlocksList(blocks, totalBlocks, totalConnections) {
+            const blockList = document.getElementById('blockList');
+            
+            // 更新统计信息
+            document.getElementById('totalBlocks').textContent = totalBlocks || blocks.length;
+            document.getElementById('totalConnections').textContent = totalConnections || 0;
+            
+            if (!blocks || blocks.length === 0) {
+                blockList.innerHTML = '<div class="loading">暂无文本块数据</div>';
+                return;
+            }
+            
+            // 生成文本块HTML
+            const blocksHtml = blocks.map(block => {
+                return `
+                    <div class="text-block">
+                        <div class="block-title">${block.title || '未命名文本块'}</div>
+                        <div class="block-content">${block.content || ''}</div>
+                        <div class="block-meta">
+                            <span>ID: ${block.id}</span>
+                            <span>${block.timestamp || ''}</span>
+                        </div>
+                        ${Array.isArray(block.connections) && block.connections.length > 0 ? `
+                            <div class="block-connections">
+                                <strong>关联:</strong>
+                                ${block.connections
+                                    .filter(conn => conn && (conn.title || conn.id))
+                                    .map(conn => `<span class="connection-tag">${conn.title || conn.id}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+            
+            blockList.innerHTML = blocksHtml;
+        }
+        
+        // 更新刷新时间
+        function updateRefreshTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('zh-CN', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('refreshTime').textContent = `上次刷新: ${timeString}`;
+        }
+        
+        // 显示加载错误
+        function showBlockLoadingError() {
+            const blockList = document.getElementById('blockList');
+            blockList.innerHTML = `
+                <div class="loading">
+                    <p>加载文本块数据失败</p>
+                    <p style="font-size: 0.8em; margin-top: 5px;">请检查网络连接或点击刷新按钮重试</p>
+                </div>
+            `;
+        }
+        
+        // 初始化拖拽功能
+        function initializeDragDrop() {
+            const dragDropArea = document.getElementById('dragDropArea');
+            const textarea = document.getElementById('userInput');
+            
+            // 拖拽事件处理
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dragDropArea.addEventListener(eventName, preventDefaults, false);
+                textarea.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dragDropArea.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                dragDropArea.addEventListener(eventName, unhighlight, false);
+            });
+            
+            function highlight() {
+                dragDropArea.classList.add('dragover');
+            }
+            
+            function unhighlight() {
+                dragDropArea.classList.remove('dragover');
+            }
+            
+            // 处理文件拖拽
+            dragDropArea.addEventListener('drop', handleDrop, false);
+            textarea.addEventListener('drop', handleDrop, false);
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles(files);
+            }
+        }
+        
+        // 处理文件
+        function handleFiles(files) {
+            if (files.length > 0) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (file.type.startsWith('image/')) {
+                        handleImageFile(file);
+                    } else {
+                        handleDocumentFile(file);
+                    }
+                }
+            }
+        }
+        
+        // 处理文档文件
+        async function handleDocumentFile(file) {
+            // 显示上传消息
+            addMessage('user', `📄 上传了文件: ${file.name}`);
+            errorReporter.recordUserAction(`上传文件: ${file.name}`);
+            
+            // 实际将文件上传到服务器
+            await uploadFileToServer(file);
+        }
+        
+        // 处理图片文件
+        async function handleImageFile(file) {
+            // 显示上传消息
+            addMessage('user', `🖼️ 上传了图片: ${file.name}`);
+            errorReporter.recordUserAction(`上传图片: ${file.name}`);
+            
+            // 实际将图片上传到服务器
+            await uploadFileToServer(file);
+        }
+        
+        // 将文件上传到服务器
+        async function uploadFileToServer(file) {
+            try {
+                // 创建FormData对象
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                // 发送文件上传请求
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // 文件上传成功，调用智能体处理
+                    await sendMessageWithFile(file.name, data.file_path);
+                } else {
+                    addMessage('assistant', `文件上传失败: ${data.error}`);
+                }
+            } catch (error) {
+                console.error('文件上传失败:', error);
+                addMessage('assistant', `文件上传失败: ${error.message}`);
+                errorReporter.reportComponentError(error, 'ChatInterface', 'uploadFileToServer', { file_name: file.name });
+            }
+        }
+        
+        // 发送消息并附带文件路径
+        async function sendMessageWithFile(file_name, file_path) {
+            try {
+                // 显示思考步骤区域
+                showThinkingSteps();
+                
+                // 调用智能体模板API，附带文件路径
+                const response = await fetch('/api/agent-template/message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        message: `分析上传的文件: ${file_name}`,
+                        uploaded_file: file_path 
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // 渲染真实的思维步骤（来自后端）
+                if (data.thinking_steps && data.thinking_steps.length > 0) {
+                    data.thinking_steps.forEach((step, index) => {
+                        addThinkingStep(index + 1, step.content);
+                    });
+                }
+                
+                if (data.success) {
+                    // 获取智能体回复
+                    const assistantResponse = data.agent_responses[0].content;
+                    addMessage('assistant', assistantResponse);
+                } else {
+                    addMessage('assistant', `抱歉，我暂时无法处理您的文件。错误信息：${data.error || '未知错误'}`);
+                    
+                    // 上报API错误
+                    errorReporter.reportComponentError(new Error(data.error || 'API调用失败'), 'ChatInterface', 'sendMessageWithFile', {
+                        api_response: data,
+                        file_name: file_name
+                    });
+                }
+                
+                // 隐藏思考步骤区域
+                hideThinkingSteps();
+            } catch (error) {
+                console.error('处理文件失败:', error);
+                addMessage('assistant', '抱歉，处理文件失败，请稍后重试。');
+                
+                // 上报网络或其他错误
+                errorReporter.reportComponentError(error, 'ChatInterface', 'sendMessageWithFile', { file_name: file_name });
+                
+                // 隐藏思考步骤区域
+                hideThinkingSteps();
+            }
+        }
+        
+        // 处理文件上传
+        function handleFileUpload(files) {
+            handleFiles(files);
+        }
+        
+        // 处理图片上传
+        function handleImageUpload(files) {
+            handleFiles(files);
+        }
+        
+        // 截图功能 - 调用外部文件中的实现
+        function handleTakeScreenshot() {
+            // 调用外部screenshot.js文件中的takeScreenshot函数
+            takeScreenshot(addMessage.bind(null, 'user'), errorReporter.recordUserAction.bind(errorReporter));
+        }
+        
+        // 显示思考步骤
+        function showThinkingSteps() {
+            const thinkingSteps = document.getElementById('thinkingSteps');
+            thinkingSteps.style.display = 'block';
+        }
+        
+        // 添加思考步骤
+        function addThinkingStep(stepNumber, content) {
+            const stepsContent = document.getElementById('stepsContent');
+            const stepDiv = document.createElement('div');
+            stepDiv.className = 'thinking-step';
+            
+            const now = new Date();
+            const timestamp = now.toLocaleString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            
+            stepDiv.innerHTML = `
+                <div class="step-number">${stepNumber}.</div>
+                <div class="step-content">
+                    <div>${content}</div>
+                    <div class="step-timestamp">${timestamp}</div>
+                </div>
+            `;
+            
+            stepsContent.appendChild(stepDiv);
+            
+            // 滚动到最新步骤
+            const thinkingSteps = document.getElementById('thinkingSteps');
+            thinkingSteps.scrollTop = thinkingSteps.scrollHeight;
+        }
+        
+        // 隐藏思考步骤
+        function hideThinkingSteps() {
+            const thinkingSteps = document.getElementById('thinkingSteps');
+            thinkingSteps.style.display = 'none';
+            // 清空步骤内容
+            document.getElementById('stepsContent').innerHTML = '';
+        }
+        
+        // 保存对话历史到本地存储
+        function saveConversationHistory() {
+            try {
+                const chatMessages = document.getElementById('chatMessages');
+                const messages = chatMessages.querySelectorAll('.message');
+                const history = [];
+                
+                // 限制对话历史长度，最多保存50条消息
+                const maxHistoryLength = 50;
+                const startIndex = Math.max(0, messages.length - maxHistoryLength);
+                
+                for (let i = startIndex; i < messages.length; i++) {
+                    const message = messages[i];
+                    const role = message.classList.contains('user') ? 'user' : message.classList.contains('assistant') ? 'assistant' : 'system';
+                    const content = message.querySelector('div:first-child').textContent;
+                    const timestamp = message.querySelector('.timestamp').textContent;
+                    
+                    history.push({ role, content, timestamp });
+                }
+                
+                localStorage.setItem('base_agent_chat_history', JSON.stringify(history));
+            } catch (error) {
+                console.error('保存对话历史失败:', error);
+                errorReporter.reportComponentError(error, 'ChatInterface', 'saveConversationHistory', {});
+            }
+        }
+        
+        // 从本地存储加载对话历史
+        function loadConversationHistory() {
+            try {
+                const history = localStorage.getItem('base_agent_chat_history');
+                if (history) {
+                    const messages = JSON.parse(history);
+                    messages.forEach(message => {
+                        addMessage(message.role, message.content);
+                    });
+                }
+            } catch (error) {
+                console.error('加载对话历史失败:', error);
+                errorReporter.reportComponentError(error, 'ChatInterface', 'loadConversationHistory', {});
+            }
+        }
+    </script>
+</body>
+</html>

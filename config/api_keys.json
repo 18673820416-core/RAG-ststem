@@ -1,0 +1,15 @@
+{
+  "qianwen": {
+    "api_key": "sk-ca5cbb1572724063ae886b8012aa0541",
+    "description": "用户提供的字节跳动千问API密钥",
+    "added_time": "2025-12-03",
+    "embedding_api_key": "sk-ca5cbb1572724063ae886b8012aa0541",
+    "embedding_model": "text-embedding-v3",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  },
+  "deepseek": {
+    "key": "sk-4ce384ecace64c729dea26b2bea0de89",
+    "description": "用户提供的DeepSeek API密钥（备用LLM）",
+    "added_time": "2025-12-03"
+  }
+}

@@ -1,0 +1,205 @@
+[
+  {
+    "id": "5d77ad7a-0041-4055-9ca2-65ce6e366180",
+    "timestamp": "2025-12-01T16:09:30.313041",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "user_message",
+      "content": "请执行命令：echo '测试command_line工具'"
+    }
+  },
+  {
+    "id": "3163ad50-2912-4ef7-b382-1700c94e996f",
+    "timestamp": "2025-12-01T16:09:30.513825",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "agent_response",
+      "content": "抱歉，我需要更准确地回答您的问题。让我重新思考一下：请执行命令：echo '测试command_line工具'",
+      "observation": {
+        "fitness_score": 0.6766666666666666,
+        "is_fit": false,
+        "keyword_match_score": 0.6666666666666666,
+        "length_score": 0.7
+      },
+      "thinking_process": [
+        "1. 接收用户问题: 请执行命令：echo '测试command_line工具'",
+        "2. 记录用户消息到工作日记",
+        "3. 开始检索相关记忆",
+        "4. 找到相关记忆: 8 条",
+        "5. 构建工具使用说明",
+        "6. 工具信息构建完成",
+        "7. 完整系统提示词构建完成",
+        "8. 开始调用LLM生成响应",
+        "9. LLM响应生成完成",
+        "10. 检测到响应中包含工具调用",
+        "11. 开始解析工具调用信息 1/1",
+        "12. 成功解析工具调用: command_line",
+        "13. 参数: {'command': \"echo '测试command_line工具'\"}",
+        "14. 开始执行工具调用: command_line",
+        "15. 工具调用执行完成: command_line",
+        "16. 工具调用结果: {\"success\": true, \"data\": {\"success\": true, \"exit_code\": 0, \"stdout\": \"'测试command_line工具'\\n\", \"stderr\": \"\", \"command\": \"echo '测试command_line工具'\", \"original_command\": \"echo '测试command_line工具'\"}, \"tool\": \"command_line\"}",
+        "19. 开始格式化响应",
+        "20. 响应格式化完成",
+        "21. 开始观察结果",
+        "22. 观察结果完成: 拟合度分数 0.6766666666666666",
+        "23. 响应拟合度不足，尝试优化...",
+        "24. 优化完成，生成新的响应",
+        "25. 记录响应到工作日记"
+      ]
+    }
+  },
+  {
+    "id": "e24e561d-4d87-48d4-8b30-a2a4f67e33bc",
+    "timestamp": "2025-12-01T16:09:30.514812",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "user_message",
+      "content": "请创建一个测试文件，内容为'测试file_writing工具'"
+    }
+  },
+  {
+    "id": "b8e37f28-a30e-49f2-8793-78f545b12d6c",
+    "timestamp": "2025-12-01T16:09:30.571542",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "agent_response",
+      "content": "抱歉，我需要更准确地回答您的问题。让我重新思考一下：请创建一个测试文件，内容为'测试file_writing工具'",
+      "observation": {
+        "fitness_score": 0.21,
+        "is_fit": false,
+        "keyword_match_score": 0.0,
+        "length_score": 0.7
+      },
+      "thinking_process": [
+        "1. 接收用户问题: 请创建一个测试文件，内容为'测试file_writing工具'",
+        "2. 记录用户消息到工作日记",
+        "3. 开始检索相关记忆",
+        "4. 找到相关记忆: 8 条",
+        "5. 构建工具使用说明",
+        "6. 工具信息构建完成",
+        "7. 完整系统提示词构建完成",
+        "8. 开始调用LLM生成响应",
+        "9. LLM响应生成完成",
+        "10. 检测到响应中包含工具调用",
+        "11. 开始解析工具调用信息 1/1",
+        "12. 成功解析工具调用: file_writing",
+        "13. 参数: {'file_path': 'test_output.txt', 'content': '测试文件内容'}",
+        "14. 开始执行工具调用: file_writing",
+        "15. 工具调用执行完成: file_writing",
+        "16. 工具调用结果: {\"success\": true, \"data\": {\"message\": \"文件写入成功: test_output.txt\", \"file_path\": \"test_output.txt\", \"content\": \"测试文件内容\", \"overwrite\": false}, \"tool\": \"file_writing\"}",
+        "19. 开始格式化响应",
+        "20. 响应格式化完成",
+        "21. 开始观察结果",
+        "22. 观察结果完成: 拟合度分数 0.21",
+        "23. 响应拟合度不足，尝试优化...",
+        "24. 优化完成，生成新的响应",
+        "25. 记录响应到工作日记"
+      ]
+    }
+  },
+  {
+    "id": "fa3b5c33-862b-4602-9c68-660327bf9972",
+    "timestamp": "2025-12-01T16:09:30.577951",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "user_message",
+      "content": "请读取文件 test_output.txt"
+    }
+  },
+  {
+    "id": "4a8fd2f5-96bf-408a-9b92-779ac4b1ff17",
+    "timestamp": "2025-12-01T16:09:30.635812",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "agent_response",
+      "content": "抱歉，我需要更准确地回答您的问题。让我重新思考一下：请读取文件 test_output.txt",
+      "observation": {
+        "fitness_score": 0.6766666666666666,
+        "is_fit": false,
+        "keyword_match_score": 0.6666666666666666,
+        "length_score": 0.7
+      },
+      "thinking_process": [
+        "1. 接收用户问题: 请读取文件 test_output.txt",
+        "2. 记录用户消息到工作日记",
+        "3. 开始检索相关记忆",
+        "4. 找到相关记忆: 8 条",
+        "5. 构建工具使用说明",
+        "6. 工具信息构建完成",
+        "7. 完整系统提示词构建完成",
+        "8. 开始调用LLM生成响应",
+        "9. LLM响应生成完成",
+        "10. 检测到响应中包含工具调用",
+        "11. 开始解析工具调用信息 1/1",
+        "12. 成功解析工具调用: file_writing",
+        "13. 参数: {'file_path': 'test_output.txt', 'content': '测试文件内容'}",
+        "14. 开始执行工具调用: file_writing",
+        "15. 工具调用执行完成: file_writing",
+        "16. 工具调用结果: {\"success\": true, \"data\": {\"message\": \"文件写入成功: test_output.txt\", \"file_path\": \"test_output.txt\", \"content\": \"测试文件内容\", \"overwrite\": false}, \"tool\": \"file_writing\"}",
+        "19. 开始格式化响应",
+        "20. 响应格式化完成",
+        "21. 开始观察结果",
+        "22. 观察结果完成: 拟合度分数 0.6766666666666666",
+        "23. 响应拟合度不足，尝试优化...",
+        "24. 优化完成，生成新的响应",
+        "25. 记录响应到工作日记"
+      ]
+    }
+  },
+  {
+    "id": "15f3c37a-9ee7-4b0d-bf52-a03d51ab3dec",
+    "timestamp": "2025-12-01T16:09:30.700870",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "user_message",
+      "content": "请执行命令：nonexistent_command_123"
+    }
+  },
+  {
+    "id": "87b3e47f-0f7d-488f-8a00-c023120f343d",
+    "timestamp": "2025-12-01T16:09:30.775820",
+    "agent_id": "test_agent",
+    "agent_type": "test",
+    "data": {
+      "type": "agent_response",
+      "content": "抱歉，我需要更准确地回答您的问题。让我重新思考一下：请执行命令：nonexistent_command_123",
+      "observation": {
+        "fitness_score": 0.21,
+        "is_fit": false,
+        "keyword_match_score": 0.0,
+        "length_score": 0.7
+      },
+      "thinking_process": [
+        "1. 接收用户问题: 请执行命令：nonexistent_command_123",
+        "2. 记录用户消息到工作日记",
+        "3. 开始检索相关记忆",
+        "4. 找到相关记忆: 8 条",
+        "5. 构建工具使用说明",
+        "6. 工具信息构建完成",
+        "7. 完整系统提示词构建完成",
+        "8. 开始调用LLM生成响应",
+        "9. LLM响应生成完成",
+        "10. 检测到响应中包含工具调用",
+        "11. 开始解析工具调用信息 1/1",
+        "12. 成功解析工具调用: command_line",
+        "13. 参数: {'command': 'date'}",
+        "14. 开始执行工具调用: command_line",
+        "15. 工具调用执行完成: command_line",
+        "16. 工具调用结果: {\"success\": true, \"data\": {\"success\": true, \"exit_code\": 0, \"stdout\": \"当前日期: 2025/12/01 周一 \\n输入新日期: (年月日) \", \"stderr\": \"\", \"command\": \"date\", \"original_command\": \"date\"}, \"tool\": \"command_line\"}",
+        "19. 开始格式化响应",
+        "20. 响应格式化完成",
+        "21. 开始观察结果",
+        "22. 观察结果完成: 拟合度分数 0.21",
+        "23. 响应拟合度不足，尝试优化...",
+        "24. 优化完成，生成新的响应"
+      ]
+    }
+  }
+]

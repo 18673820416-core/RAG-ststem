@@ -1,0 +1,126 @@
+2025-12-02 16:24:02,721 - src.path_utils - INFO - [OK] 问题诊断目录初始化成功: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:24:02,722 - __main__ - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:24:02,729 - __main__ - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:24:02,730 - __main__ - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:24:02,730 - __main__ - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:24:02,730 - __main__ - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:24:02,730 - __main__ - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:24:02,730 - __main__ - INFO - [OK] 开始运行完整的系统诊断
+2025-12-02 16:24:02,731 - __main__ - INFO - [OK] 收集系统基本信息
+2025-12-02 16:24:02,731 - __main__ - INFO - [OK] 检查系统组件状态
+2025-12-02 16:24:02,731 - __main__ - INFO - [OK] 检测常见问题
+2025-12-02 16:24:02,731 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:24:02,731 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:24:02,731 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:24:02,736 - __main__ - INFO - [OK] 生成修复建议
+2025-12-02 16:24:02,736 - __main__ - INFO - [OK] 诊断完成，状态: healthy
+2025-12-02 16:24:02,737 - __main__ - INFO - [OK] 生成诊断报告，格式: text
+2025-12-02 16:24:02,737 - __main__ - INFO - [OK] 保存诊断报告到文件
+2025-12-02 16:24:02,738 - __main__ - INFO - [OK] 报告已保存到: e:\RAG系统\problems_and_diagnostics\diagnostics_report_20251202_162402.json
+2025-12-02 16:27:30,756 - src.path_utils - INFO - [OK] 问题诊断目录初始化成功: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:27:30,756 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:27:30,762 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:27:30,763 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:27:30,763 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:27:30,763 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:27:30,764 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:27:30,764 - src.problem_diagnostics - INFO - [OK] 开始运行完整的系统诊断
+2025-12-02 16:27:30,764 - src.problem_diagnostics - INFO - [OK] 收集系统基本信息
+2025-12-02 16:27:30,764 - src.problem_diagnostics - INFO - [OK] 检查系统组件状态
+2025-12-02 16:27:30,764 - src.problem_diagnostics - INFO - [OK] 检测常见问题
+2025-12-02 16:27:30,764 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:27:30,764 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:27:30,765 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:27:30,772 - src.problem_diagnostics - INFO - [OK] 生成修复建议
+2025-12-02 16:27:30,772 - src.problem_diagnostics - INFO - [OK] 诊断完成，状态: healthy
+2025-12-02 16:27:30,773 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: text
+2025-12-02 16:27:30,773 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: json
+2025-12-02 16:27:30,773 - src.problem_diagnostics - INFO - [OK] 保存诊断报告到文件
+2025-12-02 16:27:30,774 - src.problem_diagnostics - INFO - [OK] 报告已保存到: e:\RAG系统\problems_and_diagnostics\diagnostics_report_20251202_162730.json
+2025-12-02 16:27:30,774 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:27:30,774 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:27:30,775 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:27:30,795 - src.agent_error_handler - INFO - 分析错误: ConnectionError - Connection refused
+2025-12-02 16:27:30,795 - src.agent_error_handler - INFO - 从知识库找到解决方案: 检查服务是否正在运行
+2025-12-02 16:28:29,691 - src.path_utils - INFO - [OK] 问题诊断目录初始化成功: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:28:29,691 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:28:29,697 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:28:29,703 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:28:29,703 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:28:29,704 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:28:29,704 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:28:29,704 - src.problem_diagnostics - INFO - [OK] 开始运行完整的系统诊断
+2025-12-02 16:28:29,704 - src.problem_diagnostics - INFO - [OK] 收集系统基本信息
+2025-12-02 16:28:29,704 - src.problem_diagnostics - INFO - [OK] 检查系统组件状态
+2025-12-02 16:28:29,704 - src.problem_diagnostics - INFO - [OK] 检测常见问题
+2025-12-02 16:28:29,705 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:28:29,705 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:28:29,705 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:28:29,711 - src.problem_diagnostics - INFO - [OK] 生成修复建议
+2025-12-02 16:28:29,711 - src.problem_diagnostics - INFO - [OK] 诊断完成，状态: healthy
+2025-12-02 16:28:29,712 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: text
+2025-12-02 16:28:29,712 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: json
+2025-12-02 16:28:29,712 - src.problem_diagnostics - INFO - [OK] 保存诊断报告到文件
+2025-12-02 16:28:29,713 - src.problem_diagnostics - INFO - [OK] 报告已保存到: e:\RAG系统\problems_and_diagnostics\diagnostics_report_20251202_162829.json
+2025-12-02 16:28:29,713 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:28:29,713 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:28:29,713 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:28:29,714 - src.error_knowledge_base - INFO - 知识库已保存到: E:\RAG系统\data\error_knowledge_base.json
+2025-12-02 16:28:29,714 - src.error_knowledge_base - INFO - 添加解决方案到知识库: Connection refused
+2025-12-02 16:28:29,720 - src.agent_error_handler - INFO - 分析错误: ConnectionError - Connection refused
+2025-12-02 16:28:29,720 - src.agent_error_handler - INFO - 从知识库找到解决方案: 检查服务是否正在运行
+2025-12-02 16:29:17,592 - src.path_utils - INFO - [OK] 问题诊断目录初始化成功: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:29:17,593 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:29:17,596 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:29:17,597 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:29:17,598 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:29:17,598 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:29:17,598 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:29:17,599 - src.problem_diagnostics - INFO - [OK] 开始运行完整的系统诊断
+2025-12-02 16:29:17,599 - src.problem_diagnostics - INFO - [OK] 收集系统基本信息
+2025-12-02 16:29:17,599 - src.problem_diagnostics - INFO - [OK] 检查系统组件状态
+2025-12-02 16:29:17,599 - src.problem_diagnostics - INFO - [OK] 检测常见问题
+2025-12-02 16:29:17,599 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:29:17,599 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:29:17,599 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:29:17,606 - src.problem_diagnostics - INFO - [OK] 生成修复建议
+2025-12-02 16:29:17,606 - src.problem_diagnostics - INFO - [OK] 诊断完成，状态: healthy
+2025-12-02 16:29:17,606 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: text
+2025-12-02 16:29:17,606 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: json
+2025-12-02 16:29:17,606 - src.problem_diagnostics - INFO - [OK] 保存诊断报告到文件
+2025-12-02 16:29:17,607 - src.problem_diagnostics - INFO - [OK] 报告已保存到: e:\RAG系统\problems_and_diagnostics\diagnostics_report_20251202_162917.json
+2025-12-02 16:29:17,608 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:29:17,608 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:29:17,608 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:29:17,609 - src.error_knowledge_base - INFO - 知识库已保存到: E:\RAG系统\data\error_knowledge_base.json
+2025-12-02 16:29:17,609 - src.error_knowledge_base - INFO - 添加解决方案到知识库: Connection refused
+2025-12-02 16:29:17,619 - src.agent_error_handler - INFO - 分析错误: ConnectionError - Connection refused
+2025-12-02 16:29:17,619 - src.agent_error_handler - INFO - 从知识库找到解决方案: 检查服务是否正在运行
+2025-12-02 16:29:51,891 - src.path_utils - INFO - [OK] 问题诊断目录初始化成功: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:29:51,892 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:29:51,896 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:29:51,900 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:29:51,901 - src.problem_diagnostics - INFO - [OK] 成功导入路径处理工具
+2025-12-02 16:29:51,901 - src.problem_diagnostics - INFO - [OK] 成功导入错误处理模块
+2025-12-02 16:29:51,901 - src.problem_diagnostics - INFO - [OK] 成功导入错误知识库
+2025-12-02 16:29:51,902 - src.problem_diagnostics - INFO - [OK] 开始运行完整的系统诊断
+2025-12-02 16:29:51,902 - src.problem_diagnostics - INFO - [OK] 收集系统基本信息
+2025-12-02 16:29:51,902 - src.problem_diagnostics - INFO - [OK] 检查系统组件状态
+2025-12-02 16:29:51,902 - src.problem_diagnostics - INFO - [OK] 检测常见问题
+2025-12-02 16:29:51,902 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:29:51,902 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:29:51,902 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:29:51,908 - src.problem_diagnostics - INFO - [OK] 生成修复建议
+2025-12-02 16:29:51,909 - src.problem_diagnostics - INFO - [OK] 诊断完成，状态: healthy
+2025-12-02 16:29:51,909 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: text
+2025-12-02 16:29:51,909 - src.problem_diagnostics - INFO - [OK] 生成诊断报告，格式: json
+2025-12-02 16:29:51,909 - src.problem_diagnostics - INFO - [OK] 保存诊断报告到文件
+2025-12-02 16:29:51,910 - src.problem_diagnostics - INFO - [OK] 报告已保存到: e:\RAG系统\problems_and_diagnostics\diagnostics_report_20251202_162951.json
+2025-12-02 16:29:51,911 - src.path_utils - INFO - [FIX] 修复路径: e:\AI\qiusuo-framework\#problems_and_diagnostics
+2025-12-02 16:29:51,911 - src.path_utils - INFO - [OK] 处理特殊字符成功: e_colon_\AI\qiusuo-framework\_sharp_problems_and_diagnostics
+2025-12-02 16:29:51,911 - src.path_utils - INFO - [REPLACE] 将包含 # 的问题目录替换为安全目录: e:\RAG系统\problems_and_diagnostics
+2025-12-02 16:29:51,913 - src.error_knowledge_base - INFO - 知识库已保存到: E:\RAG系统\data\error_knowledge_base.json
+2025-12-02 16:29:51,913 - src.error_knowledge_base - INFO - 添加解决方案到知识库: Connection refused
+2025-12-02 16:29:51,913 - src.error_knowledge_base - INFO - 从知识库找到解决方案: Connection refused
+2025-12-02 16:29:51,915 - src.agent_error_handler - INFO - 分析错误: ConnectionError - Connection refused
+2025-12-02 16:29:51,915 - src.agent_error_handler - INFO - 从知识库找到解决方案: 检查服务是否正在运行

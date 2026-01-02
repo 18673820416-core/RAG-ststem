@@ -1,0 +1,22 @@
+# RAG系统依赖包
+
+# 核心依赖
+numpy>=1.21.0
+
+# 数据库
+sqlite3  # Python内置，无需安装
+
+# 文本处理（未来扩展）
+# sentence-transformers>=2.2.0  # 文本嵌入模型（暂时注释，先用简单实现）
+# transformers>=4.20.0         # 自然语言处理
+
+# 工具库
+pathlib2>=2.3.0; python_version < "3.4"  # 兼容旧版本Python
+python-docx>=1.2.0  # DOC文件处理支持
+
+# 开发工具（可选）
+# jupyter>=1.0.0                # 交互式开发
+# matplotlib>=3.5.0             # 数据可视化
+
+# 注意：当前版本使用轻量级实现，避免复杂依赖
+# 后续可根据需要启用高级功能

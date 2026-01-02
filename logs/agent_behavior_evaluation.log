@@ -1,0 +1,57 @@
+2025-12-02 09:08:58,814 - agent_discovery_engine - WARNING - 分析智能体文件 src\agent_manager.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:58,816 - agent_reporting_mechanism - INFO - 智能体主动报告机制初始化完成
+2025-12-02 09:08:59,043 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-02 09:08:59,043 - tools.chat_tools - WARNING - 网络搜索工具未启用，请设置API密钥
+2025-12-02 09:08:59,043 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（信息熵驱动递归分片机制）
+2025-12-02 09:08:59,052 - ReasoningEngine - INFO - 推理引擎已初始化，版本: 1.0.0
+2025-12-02 09:08:59,052 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-02 09:08:59,059 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-02 09:08:59,060 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-02 09:08:59,068 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-02 09:08:59,070 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-02 09:08:59,073 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-02 09:08:59,073 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+2025-12-02 09:08:59,160 - approval_mechanism - INFO - 分级审批机制初始化完成
+2025-12-02 09:08:59,168 - agent_discovery_engine - WARNING - 分析智能体文件 src\base_agent.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,185 - agent_discovery_engine - WARNING - 分析智能体文件 src\code_implementer_agent.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,188 - agent_discovery_engine - WARNING - 分析智能体文件 src\data_collector_agent.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,198 - agent_discovery_engine - WARNING - 分析智能体文件 src\memory_organizer.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,199 - agent_discovery_engine - WARNING - 分析智能体文件 src\mesh_database_interface.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,202 - agent_discovery_engine - WARNING - 分析智能体文件 src\multimodal_retrieval_engine.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,205 - agent_discovery_engine - WARNING - 分析智能体文件 src\scheme_evaluator_agent.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,206 - agent_discovery_engine - WARNING - 分析智能体文件 src\self_evolution_controller.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,207 - agent_discovery_engine - WARNING - 分析智能体文件 src\system_architect_agent.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,210 - agent_discovery_engine - WARNING - 分析智能体文件 src\system_monitor.py 失败: No module named 'psutil'
+2025-12-02 09:08:59,212 - agent_discovery_engine - WARNING - 分析智能体文件 src\test_participant_evaluation.py 失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,214 - timing_strategy_engine - INFO - 时机选择策略引擎初始化完成
+2025-12-02 09:08:59,216 - tool_registry_manager - INFO - 工具注册表已加载，包含 1 个已注册工具
+2025-12-02 09:08:59,339 - tool_review_manager - INFO - 待审核工具列表已加载，包含 7 个待审核工具
+2025-12-02 09:08:59,339 - tool_review_manager - INFO - 审核历史记录已加载，包含 2 条记录
+2025-12-02 09:08:59,345 - agent_discovery_engine - INFO - 发现 0 个智能体
+2025-12-02 09:08:59,345 - MultiAgentChatroom - WARNING - 智能体发现机制失败，使用默认模拟智能体: 'str' object has no attribute 'get'
+2025-12-02 09:08:59,346 - MultiAgentChatroom - INFO - 使用默认模拟智能体初始化成功
+2025-12-02 09:08:59,346 - AgentWindow_系统管家_window - WARNING - 初始化记忆重构引擎失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,346 - AgentWindow_系统管家_window - INFO - 智能体独立对话窗口初始化完成: 系统管家 (0b0abc54-f00f-46dd-bf71-636d377c8214)
+2025-12-02 09:08:59,346 - AgentWindow_系统管家_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-02 09:08:59,346 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 系统管家
+2025-12-02 09:08:59,347 - AgentWindow_方案评估师_window - WARNING - 初始化记忆重构引擎失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,347 - AgentWindow_方案评估师_window - INFO - 智能体独立对话窗口初始化完成: 方案评估师 (50dc9267-7fa8-4ee3-bd34-658ed54b6433)
+2025-12-02 09:08:59,347 - AgentWindow_方案评估师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-02 09:08:59,347 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 方案评估师
+2025-12-02 09:08:59,348 - AgentWindow_文本实现师_window - WARNING - 初始化记忆重构引擎失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,348 - AgentWindow_文本实现师_window - INFO - 智能体独立对话窗口初始化完成: 文本实现师 (c49a5fa9-cf66-4a2f-9536-aa489fde0eef)
+2025-12-02 09:08:59,348 - AgentWindow_文本实现师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-02 09:08:59,348 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 文本实现师
+2025-12-02 09:08:59,348 - AgentWindow_数据收集师_window - WARNING - 初始化记忆重构引擎失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,349 - AgentWindow_数据收集师_window - INFO - 智能体独立对话窗口初始化完成: 数据收集师 (26c426ba-9b00-4c59-9219-b88b82cedea8)
+2025-12-02 09:08:59,349 - AgentWindow_数据收集师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-02 09:08:59,349 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 数据收集师
+2025-12-02 09:08:59,349 - AgentWindow_错误处理师_window - WARNING - 初始化记忆重构引擎失败: attempted relative import with no known parent package
+2025-12-02 09:08:59,349 - AgentWindow_错误处理师_window - INFO - 智能体独立对话窗口初始化完成: 错误处理师 (2ea40272-0da9-46db-af19-95f1df343744)
+2025-12-02 09:08:59,349 - AgentWindow_错误处理师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-02 09:08:59,349 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 错误处理师
+2025-12-02 09:08:59,349 - MultiAgentChatroom - INFO - 成功创建 5 个智能体对话窗口
+2025-12-02 09:08:59,350 - MultiAgentChatroom - INFO - 重构后的多智能体聊天室初始化完成 - 支持动态智能体独立理解空间
+2025-12-02 09:08:59,350 - MultiAgentChatroom - INFO - 多智能体聊天室已启动，共 5 个智能体
+2025-12-02 09:08:59,350 - MultiAgentChatroom - ERROR - 静默广播发送失败: SilentBroadcastMessage.__init__() missing 3 required positional arguments: 'keywords', 'length', and 'confidence'
+2025-12-02 09:08:59,351 - MultiAgentChatroom - INFO - 多智能体聊天室已停止

@@ -1,0 +1,4 @@
+2025-11-28 13:43:24,781 - src.agent_feedback_collector - INFO - 成功收集反馈: feedback_2b9f4261-cdbf-45f3-81aa-f3709acdf4bd，工具: test_tool，类型: 功能优化
+2025-11-28 13:43:24,798 - src.feedback_evaluator - INFO - 反馈评估完成: feedback_2b9f4261-cdbf-45f3-81aa-f3709acdf4bd, 综合评分: 67.5
+2025-11-28 13:43:24,811 - src.agent_behavior_evaluator - INFO - 开始评估智能体行为: test_agent_001, 时间窗口: 24小时
+2025-11-28 13:43:24,821 - src.agent_behavior_evaluator - INFO - 智能体行为评估完成: test_agent_001, 进化贡献值: 31.99

@@ -1,0 +1,401 @@
+导入多智能体聊天室模块成功
+导入时机选择策略引擎成功
+导入记忆重构引擎成功
+2025-12-12 18:49:07,688 - src.embedding_service - INFO - Embedding服务初始化，默认provider: local
+2025-12-12 18:49:07,691 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-12 18:49:07,691 - tools.chat_tools - INFO - 网络搜索工具已启用，使用免费引擎: DuckDuckGo
+2025-12-12 18:49:07,691 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:07,692 - ReasoningEngine - INFO - 推理引擎已初始化，版本: 1.0.0
+2025-12-12 18:49:07,692 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+从持久化存储加载了 111 个思维节点
+2025-12-12 18:49:07,720 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:07,721 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:07,721 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:07,721 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+聊天工具管理器初始化成功
+2025-12-12 18:49:07,721 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:07,721 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:07,721 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:07,723 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-12 18:49:07,726 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-12 18:49:07,726 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+⚠️  人脸识别功能已禁用（避免启动警告）
+视觉处理引擎初始化成功
+音频处理引擎初始化成功
+多模态融合引擎初始化成功
+多模态融合引擎工具加载成功
+溯因推理引擎知识库初始化成功
+溯因推理引擎工具加载成功
+分层学习引擎知识库初始化成功
+分层学习引擎工具加载成功
+工具注册请求: thinking_tracer - 统一管理智能体与聊天室的思维透明化步骤记录
+思维透明化追踪工具(thinking_tracer)注册成功
+归纳引擎工具(InductionEngine)注册成功
+2025-12-12 18:49:07,751 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-12 18:49:07,751 - tools.chat_tools - INFO - 网络搜索工具已启用，使用免费引擎: DuckDuckGo
+2025-12-12 18:49:07,751 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:07,751 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:07,752 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:07,752 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:07,752 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:07,752 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+聊天工具管理器初始化成功
+2025-12-12 18:49:07,752 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:07,752 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:07,752 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:07,752 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-12 18:49:07,752 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-12 18:49:07,752 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+⚠️  人脸识别功能已禁用（避免启动警告）
+视觉处理引擎初始化成功
+音频处理引擎初始化成功
+多模态融合引擎初始化成功
+多模态融合引擎工具加载成功
+溯因推理引擎知识库初始化成功
+溯因推理引擎工具加载成功
+分层学习引擎知识库初始化成功
+分层学习引擎工具加载成功
+工具注册请求: thinking_tracer - 统一管理智能体与聊天室的思维透明化步骤记录
+思维透明化追踪工具(thinking_tracer)注册成功
+归纳引擎工具(InductionEngine)注册成功
+导入夜间维护调度器成功
+开始启动RAG系统服务器... 端口: 9284, PID: 17132
+2025-12-12 18:49:07,769 - rag_system - INFO - 程序开始执行，端口: 9284, PID: 17132
+2025-12-12 18:49:07,769 - rag_system - INFO - 程序开始执行，端口: 9284, PID: 17132
+2025-12-12 18:49:09,823 - rag_system - INFO - 已向静态服务器注册实例, 端口=9284, PID=17132
+2025-12-12 18:49:09,823 - rag_system - INFO - 已向静态服务器注册实例, 端口=9284, PID=17132
+2025-12-12 18:49:09,823 - rag_system - INFO - 全局PORT已设置为: 9284
+2025-12-12 18:49:09,823 - rag_system - INFO - 全局PORT已设置为: 9284
+2025-12-12 18:49:09,823 - rag_system - INFO - 进入start_server函数
+2025-12-12 18:49:09,823 - rag_system - INFO - 进入start_server函数
+初始化聊天室...
+2025-12-12 18:49:09,825 - src.agent_discovery_engine - INFO - 扫描到 79 个Python文件
+2025-12-12 18:49:09,832 - src.agent_discovery_engine - INFO - ✅ 发现智能体: base_agent (base_agent.py)
+2025-12-12 18:49:09,833 - src.agent_discovery_engine - INFO - ✅ 发现智能体: code_implementer_agent (code_implementer_agent.py)
+2025-12-12 18:49:09,834 - src.agent_discovery_engine - INFO - ✅ 发现智能体: data_collector_agent (data_collector_agent.py)
+2025-12-12 18:49:09,844 - src.agent_discovery_engine - INFO - ✅ 发现智能体: scheme_evaluator_agent (scheme_evaluator_agent.py)
+2025-12-12 18:49:09,846 - src.agent_discovery_engine - INFO - ✅ 发现智能体: system_architect_agent (system_architect_agent.py)
+2025-12-12 18:49:09,847 - src.agent_discovery_engine - INFO - ✅ 发现智能体: system_maintenance_agent (system_maintenance_agent.py)
+2025-12-12 18:49:09,853 - src.agent_discovery_engine - INFO - 发现 6 个智能体
+2025-12-12 18:49:09,854 - MultiAgentChatroom - WARNING - 智能体 base_agent 未在角色映射中，已跳过
+2025-12-12 18:49:09,854 - MultiAgentChatroom - WARNING - 智能体 base_agent 未在角色映射中，已跳过
+⚠️ 默认服务商 qianwen 未配置，切换到 deepseek
+2025-12-12 18:49:09,854 - text_implementer_implementer_001 - INFO - [系统启动] 文本实现师智能体启动 - 角色：文本实现师，权限：自主实现
+2025-12-12 18:49:09,855 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: code_implementer_agent -> 文本实现师
+2025-12-12 18:49:09,855 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: code_implementer_agent -> 文本实现师
+⚠️ 默认服务商 qianwen 未配置，切换到 deepseek
+2025-12-12 18:49:09,855 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:09,855 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,856 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,856 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,856 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+⚠️ 默认服务商 qianwen 未配置，切换到 deepseek
+工具注册请求: scan_file_system - 扫描文件系统，发现可收集的数据源
+工具注册请求: collect_from_path - 从指定路径收集数据
+工具注册请求: batch_collect_sources - 批量收集所有配置的数据源
+工具注册请求: validate_data_quality - 验证收集数据的质量
+工具注册请求: generate_collection_report - 生成数据收集报告
+2025-12-12 18:49:09,856 - src.data_collector_agent - INFO - 数据收集专用工具注册完成
+2025-12-12 18:49:09,856 - src.data_collector_agent - INFO - 数据收集智能体 data_collector_001 初始化完成
+2025-12-12 18:49:09,856 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: data_collector_agent -> 数据收集师
+2025-12-12 18:49:09,856 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: data_collector_agent -> 数据收集师
+⚠️ 默认服务商 qianwen 未配置，切换到 deepseek
+2025-12-12 18:49:09,857 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:09,857 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,857 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,857 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,857 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:09,857 - scheme_evaluator_evaluator_001 - INFO - [系统启动] 方案评估师智能体启动 - 角色：平等律评估专家，权限：自主评估
+2025-12-12 18:49:09,857 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: scheme_evaluator_agent -> 方案评估师
+2025-12-12 18:49:09,857 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: scheme_evaluator_agent -> 方案评估师
+⚠️ 默认服务商 qianwen 未配置，切换到 deepseek
+2025-12-12 18:49:09,858 - src.system_architect_agent - INFO - ✅ 灵魂注入成功: 五大律令 v1.0.0
+2025-12-12 18:49:09,858 - src.system_architect_agent - INFO - [系统启动] 系统管家智能体启动 - 灵魂：五大律令 - 身份：宇宙局域熵减引擎 - 权限：自主决策
+2025-12-12 18:49:09,858 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: system_architect_agent -> 系统管家
+2025-12-12 18:49:09,858 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: system_architect_agent -> 系统管家
+⚠️ 默认服务商 qianwen 未配置，切换到 deepseek
+2025-12-12 18:49:09,864 - self_expose_protocol - INFO - 已加载 1 个组件注册信息
+2025-12-12 18:49:09,864 - self_expose_protocol - INFO - 组件自曝光协议管理器初始化完成
+⚠️ 默认服务商 qianwen 未配置，切换到 deepseek
+工具注册请求: diagnose_error - 诊断系统错误，分析根因和影响范围
+工具注册请求: auto_fix - 自动修复常见系统错误
+工具注册请求: monitor_system_health - 执行系统健康巡检
+工具注册请求: validate_configuration - 验证系统配置完整性
+工具注册请求: analyze_performance - 分析系统性能指标
+工具注册请求: check_tool_usage_consistency - 检查工具调用真实性，识别模拟结果信号
+2025-12-12 18:49:09,864 - src.system_maintenance_agent - INFO - 系统维护专用工具注册完成
+2025-12-12 18:49:09,864 - system_maintenance_maintenance_001 - INFO - [系统启动] 系统维护师智能体启动 - 角色：系统健康守护者，权限：诊断和修复
+2025-12-12 18:49:09,864 - src.system_maintenance_agent - INFO - 系统维护师智能体 maintenance_001 初始化完成
+2025-12-12 18:49:09,864 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: system_maintenance_agent -> 系统维护师
+2025-12-12 18:49:09,864 - MultiAgentChatroom - INFO - 通过发现机制创建智能体: system_maintenance_agent -> 系统维护师
+2025-12-12 18:49:09,864 - MultiAgentChatroom - INFO - 通过智能体发现机制成功初始化 5 个智能体
+2025-12-12 18:49:09,864 - MultiAgentChatroom - INFO - 通过智能体发现机制成功初始化 5 个智能体
+2025-12-12 18:49:09,865 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-12 18:49:09,865 - tools.chat_tools - INFO - 网络搜索工具已启用，使用免费引擎: DuckDuckGo
+2025-12-12 18:49:09,865 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:09,865 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,865 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,865 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,865 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:09,866 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+聊天工具管理器初始化成功
+2025-12-12 18:49:09,866 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,866 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,866 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,866 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-12 18:49:09,866 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-12 18:49:09,866 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+⚠️  人脸识别功能已禁用（避免启动警告）
+视觉处理引擎初始化成功
+音频处理引擎初始化成功
+多模态融合引擎初始化成功
+多模态融合引擎工具加载成功
+溯因推理引擎知识库初始化成功
+溯因推理引擎工具加载成功
+分层学习引擎知识库初始化成功
+分层学习引擎工具加载成功
+工具注册请求: thinking_tracer - 统一管理智能体与聊天室的思维透明化步骤记录
+思维透明化追踪工具(thinking_tracer)注册成功
+归纳引擎工具(InductionEngine)注册成功
+2025-12-12 18:49:09,867 - AgentWindow_文本实现师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,867 - AgentWindow_文本实现师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,867 - AgentWindow_文本实现师_window - INFO - 智能体独立对话窗口初始化完成: 文本实现师 (a9f70b09-5326-468c-abd0-404028126b15)
+2025-12-12 18:49:09,867 - AgentWindow_文本实现师_window - INFO - 智能体独立对话窗口初始化完成: 文本实现师 (a9f70b09-5326-468c-abd0-404028126b15)
+2025-12-12 18:49:09,867 - AgentWindow_文本实现师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,867 - AgentWindow_文本实现师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,867 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 文本实现师
+2025-12-12 18:49:09,867 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 文本实现师
+2025-12-12 18:49:09,868 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-12 18:49:09,868 - tools.chat_tools - INFO - 网络搜索工具已启用，使用免费引擎: DuckDuckGo
+2025-12-12 18:49:09,868 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:09,868 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,869 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,869 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,869 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:09,869 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+聊天工具管理器初始化成功
+2025-12-12 18:49:09,869 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,869 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,869 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,869 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-12 18:49:09,869 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-12 18:49:09,869 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+⚠️  人脸识别功能已禁用（避免启动警告）
+视觉处理引擎初始化成功
+音频处理引擎初始化成功
+多模态融合引擎初始化成功
+多模态融合引擎工具加载成功
+溯因推理引擎知识库初始化成功
+溯因推理引擎工具加载成功
+分层学习引擎知识库初始化成功
+分层学习引擎工具加载成功
+工具注册请求: thinking_tracer - 统一管理智能体与聊天室的思维透明化步骤记录
+思维透明化追踪工具(thinking_tracer)注册成功
+归纳引擎工具(InductionEngine)注册成功
+2025-12-12 18:49:09,870 - AgentWindow_数据收集师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,870 - AgentWindow_数据收集师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,870 - AgentWindow_数据收集师_window - INFO - 智能体独立对话窗口初始化完成: 数据收集师 (e43752c8-d271-44fe-b617-a817cece0405)
+2025-12-12 18:49:09,870 - AgentWindow_数据收集师_window - INFO - 智能体独立对话窗口初始化完成: 数据收集师 (e43752c8-d271-44fe-b617-a817cece0405)
+2025-12-12 18:49:09,870 - AgentWindow_数据收集师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,870 - AgentWindow_数据收集师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,870 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 数据收集师
+2025-12-12 18:49:09,870 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 数据收集师
+2025-12-12 18:49:09,871 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-12 18:49:09,871 - tools.chat_tools - INFO - 网络搜索工具已启用，使用免费引擎: DuckDuckGo
+2025-12-12 18:49:09,871 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:09,871 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,871 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,871 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,871 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:09,871 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+聊天工具管理器初始化成功
+2025-12-12 18:49:09,871 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,871 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,871 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,872 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-12 18:49:09,872 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-12 18:49:09,872 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+⚠️  人脸识别功能已禁用（避免启动警告）
+视觉处理引擎初始化成功
+音频处理引擎初始化成功
+多模态融合引擎初始化成功
+多模态融合引擎工具加载成功
+溯因推理引擎知识库初始化成功
+溯因推理引擎工具加载成功
+分层学习引擎知识库初始化成功
+分层学习引擎工具加载成功
+工具注册请求: thinking_tracer - 统一管理智能体与聊天室的思维透明化步骤记录
+思维透明化追踪工具(thinking_tracer)注册成功
+归纳引擎工具(InductionEngine)注册成功
+2025-12-12 18:49:09,872 - AgentWindow_方案评估师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,872 - AgentWindow_方案评估师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,872 - AgentWindow_方案评估师_window - INFO - 智能体独立对话窗口初始化完成: 方案评估师 (57b008cd-e542-4919-9765-72b5e8a32efd)
+2025-12-12 18:49:09,872 - AgentWindow_方案评估师_window - INFO - 智能体独立对话窗口初始化完成: 方案评估师 (57b008cd-e542-4919-9765-72b5e8a32efd)
+2025-12-12 18:49:09,872 - AgentWindow_方案评估师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,872 - AgentWindow_方案评估师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,873 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 方案评估师
+2025-12-12 18:49:09,873 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 方案评估师
+2025-12-12 18:49:09,873 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-12 18:49:09,873 - tools.chat_tools - INFO - 网络搜索工具已启用，使用免费引擎: DuckDuckGo
+2025-12-12 18:49:09,873 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:09,873 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,873 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,873 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,873 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:09,873 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+聊天工具管理器初始化成功
+2025-12-12 18:49:09,874 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,874 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,874 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,874 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-12 18:49:09,874 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-12 18:49:09,874 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+⚠️  人脸识别功能已禁用（避免启动警告）
+视觉处理引擎初始化成功
+音频处理引擎初始化成功
+多模态融合引擎初始化成功
+多模态融合引擎工具加载成功
+溯因推理引擎知识库初始化成功
+溯因推理引擎工具加载成功
+分层学习引擎知识库初始化成功
+分层学习引擎工具加载成功
+工具注册请求: thinking_tracer - 统一管理智能体与聊天室的思维透明化步骤记录
+思维透明化追踪工具(thinking_tracer)注册成功
+归纳引擎工具(InductionEngine)注册成功
+2025-12-12 18:49:09,874 - AgentWindow_系统管家_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,874 - AgentWindow_系统管家_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,875 - AgentWindow_系统管家_window - INFO - 智能体独立对话窗口初始化完成: 系统管家 (40e2f660-6a54-4694-9d54-d0e7eaff1311)
+2025-12-12 18:49:09,875 - AgentWindow_系统管家_window - INFO - 智能体独立对话窗口初始化完成: 系统管家 (40e2f660-6a54-4694-9d54-d0e7eaff1311)
+2025-12-12 18:49:09,875 - AgentWindow_系统管家_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,875 - AgentWindow_系统管家_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,875 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 系统管家
+2025-12-12 18:49:09,875 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 系统管家
+2025-12-12 18:49:09,875 - tools.chat_tools - INFO - 文件读取工具已初始化，基础路径: E:\RAG系统
+2025-12-12 18:49:09,875 - tools.chat_tools - INFO - 网络搜索工具已启用，使用免费引擎: DuckDuckGo
+2025-12-12 18:49:09,875 - tools.memory_slicer_tool - INFO - 泡泡管理器初始化成功
+2025-12-12 18:49:09,875 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,876 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,876 - tools.memory_slicer_tool - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,876 - tools.memory_slicer_tool - INFO - 记忆切片管理工具初始化完成（多层次自适应分片策略）
+2025-12-12 18:49:09,876 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+聊天工具管理器初始化成功
+2025-12-12 18:49:09,876 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,876 - CognitiveBarrierBreakEngine - INFO - 认知破障引擎初始化完成
+2025-12-12 18:49:09,876 - src.cognitive_engines.memory_reconstruction_engine - INFO - 记忆重构引擎初始化完成
+2025-12-12 18:49:09,876 - src.multimodal_alignment_engine - INFO - 多模态对齐引擎初始化完成
+2025-12-12 18:49:09,876 - src.hierarchical_retrieval_engine - INFO - 层级编码智能检索引擎初始化完成
+2025-12-12 18:49:09,876 - src.multimodal_retrieval_engine - INFO - 多模态检索引擎初始化完成（包含层级检索支持）
+⚠️  人脸识别功能已禁用（避免启动警告）
+视觉处理引擎初始化成功
+音频处理引擎初始化成功
+多模态融合引擎初始化成功
+多模态融合引擎工具加载成功
+溯因推理引擎知识库初始化成功
+溯因推理引擎工具加载成功
+分层学习引擎知识库初始化成功
+分层学习引擎工具加载成功
+工具注册请求: thinking_tracer - 统一管理智能体与聊天室的思维透明化步骤记录
+思维透明化追踪工具(thinking_tracer)注册成功
+归纳引擎工具(InductionEngine)注册成功
+2025-12-12 18:49:09,877 - AgentWindow_系统维护师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,877 - AgentWindow_系统维护师_window - INFO - 记忆重构引擎初始化成功
+2025-12-12 18:49:09,877 - AgentWindow_系统维护师_window - INFO - 智能体独立对话窗口初始化完成: 系统维护师 (23acef7c-c9b9-485a-88cb-5fe2ef752647)
+2025-12-12 18:49:09,877 - AgentWindow_系统维护师_window - INFO - 智能体独立对话窗口初始化完成: 系统维护师 (23acef7c-c9b9-485a-88cb-5fe2ef752647)
+2025-12-12 18:49:09,877 - AgentWindow_系统维护师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,877 - AgentWindow_系统维护师_window - INFO - 上下文管理配置: 最大长度=128000, 压缩阈值=0.8
+2025-12-12 18:49:09,877 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 系统维护师
+2025-12-12 18:49:09,877 - MultiAgentChatroom - INFO - 创建智能体对话窗口: 系统维护师
+2025-12-12 18:49:09,877 - MultiAgentChatroom - INFO - 成功创建 5 个智能体对话窗口
+2025-12-12 18:49:09,877 - MultiAgentChatroom - INFO - 成功创建 5 个智能体对话窗口
+2025-12-12 18:49:09,879 - src.unified_memory_system - INFO - ✅ MeshDatabaseInterface集成成功
+2025-12-12 18:49:09,879 - src.unified_memory_system - INFO - 统一记忆系统初始化完成 - 基础路径: E:\RAG系统
+2025-12-12 18:49:09,879 - MultiAgentChatroom - INFO - 从交互日志恢复 10 条历史消息
+2025-12-12 18:49:09,879 - MultiAgentChatroom - INFO - 从交互日志恢复 10 条历史消息
+2025-12-12 18:49:09,880 - rag_system - INFO - 多智能体聊天室初始化成功
+2025-12-12 18:49:09,880 - rag_system - INFO - 多智能体聊天室初始化成功
+2025-12-12 18:49:09,880 - rag_system - INFO - 多智能体聊天室初始化成功（main server）
+2025-12-12 18:49:09,880 - rag_system - INFO - 多智能体聊天室初始化成功（main server）
+多智能体聊天室初始化成功（main server）
+初始化时机选择策略引擎...
+2025-12-12 18:49:09,880 - src.timing_strategy_engine - INFO - 时机选择策略引擎初始化完成
+2025-12-12 18:49:09,881 - src.timing_strategy_engine - INFO - 时机选择监控已启动
+2025-12-12 18:49:09,881 - rag_system - INFO - 时机选择策略引擎初始化成功并启动监控
+2025-12-12 18:49:09,881 - rag_system - INFO - 时机选择策略引擎初始化成功并启动监控
+时机选择策略引擎初始化成功并启动监控
+调度记忆重构任务...
+2025-12-12 18:49:09,881 - src.timing_strategy_engine - INFO - 优化任务已调度: task_20251212_184909_memory_reconstruction - 每天晚上执行记忆重构
+2025-12-12 18:49:09,881 - rag_system - INFO - 记忆重构任务已调度
+2025-12-12 18:49:09,881 - rag_system - INFO - 记忆重构任务已调度
+记忆重构任务已调度
+设置服务器...
+2025-12-12 18:49:09,881 - rag_system - INFO - 创建TCPServer实例，监听 0.0.0.0:9284
+2025-12-12 18:49:09,881 - rag_system - INFO - 创建TCPServer实例，监听 0.0.0.0:9284
+2025-12-12 18:49:09,882 - rag_system - INFO - TCPServer实例创建成功
+2025-12-12 18:49:09,882 - rag_system - INFO - TCPServer实例创建成功
+2025-12-12 18:49:09,882 - rag_system - INFO - 后端服务状态已设置为active
+2025-12-12 18:49:09,882 - rag_system - INFO - 后端服务状态已设置为active
+2025-12-12 18:49:09,882 - rag_system - INFO - RAG系统稳定版启动服务器，端口: 9284
+2025-12-12 18:49:09,882 - rag_system - INFO - RAG系统稳定版启动服务器，端口: 9284
+2025-12-12 18:49:09,882 - rag_system - INFO - 安全入口: http://localhost:9284
+2025-12-12 18:49:09,882 - rag_system - INFO - 安全入口: http://localhost:9284
+
+RAG系统稳定版启动服务器
+记住: 端口9284就是你的系统'密码'
+纯净启动服务器已启动在端口 9284
+安全入口: http://localhost:9284
+
+使用说明:
+1. 打开浏览器访问: http://localhost:9284
+2. 点击'启动完整系统'按钮
+3. 等待系统初始化完成
+4. 开始使用RAG系统的完整功能
+5. 记住: 端口9284就是你的安全密钥
+
+服务器正在监听请求...
+
+🌙 正在启动夜间维护调度器...
+2025-12-12 18:49:09,883 - rag_system - INFO - 正在启动夜间维护调度器
+2025-12-12 18:49:09,883 - rag_system - INFO - 正在启动夜间维护调度器
+2025-12-12 18:49:09,883 - src.agent_manager - INFO - 开始自动发现智能体...
+2025-12-12 18:49:09,884 - src.agent_discovery_engine - INFO - 扫描到 79 个Python文件
+2025-12-12 18:49:09,890 - src.agent_discovery_engine - INFO - ✅ 发现智能体: base_agent (base_agent.py)
+2025-12-12 18:49:09,891 - src.agent_discovery_engine - INFO - ✅ 发现智能体: code_implementer_agent (code_implementer_agent.py)
+2025-12-12 18:49:09,892 - src.agent_discovery_engine - INFO - ✅ 发现智能体: data_collector_agent (data_collector_agent.py)
+2025-12-12 18:49:09,902 - src.agent_discovery_engine - INFO - ✅ 发现智能体: scheme_evaluator_agent (scheme_evaluator_agent.py)
+2025-12-12 18:49:09,904 - src.agent_discovery_engine - INFO - ✅ 发现智能体: system_architect_agent (system_architect_agent.py)
+2025-12-12 18:49:09,905 - src.agent_discovery_engine - INFO - ✅ 发现智能体: system_maintenance_agent (system_maintenance_agent.py)
+2025-12-12 18:49:09,911 - src.agent_discovery_engine - INFO - 发现 6 个智能体
+2025-12-12 18:49:09,912 - src.agent_discovery_engine - INFO - 扫描到 79 个Python文件
+2025-12-12 18:49:09,928 - src.agent_discovery_engine - INFO - ✅ 发现工具: rag_context_tools (rag_context_tools.py)
+2025-12-12 18:49:09,933 - src.agent_discovery_engine - INFO - ✅ 发现工具: thinking_tracer_tool (thinking_tracer_tool.py)
+2025-12-12 18:49:09,936 - src.agent_discovery_engine - INFO - 发现 2 个工具
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 发现 6 个智能体和 2 个工具
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 自动注册智能体: code_implementer_agent (来自 src.code_implementer_agent)
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 自动注册智能体: data_collector_agent (来自 src.data_collector_agent)
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 自动注册智能体: scheme_evaluator_agent (来自 src.scheme_evaluator_agent)
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 自动注册智能体: system_architect_agent (来自 src.system_architect_agent)
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 自动注册智能体: system_maintenance_agent (来自 src.system_maintenance_agent)
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 通过自动发现机制初始化了 5 个智能体
+2025-12-12 18:49:09,936 - src.agent_manager - INFO - 智能体管理器初始化完成 (自动发现: 启用)
+2025-12-12 18:49:09,937 - src.timing_strategy_engine - INFO - 时机选择策略引擎初始化完成
+2025-12-12 18:49:09,937 - src.nightly_maintenance_scheduler - INFO - 夜间维护调度器初始化完成
+2025-12-12 18:49:09,937 - src.timing_strategy_engine - INFO - 优化任务已调度: task_20251212_184909_daily_diary_writing - 每日智能体写日记
+2025-12-12 18:49:09,937 - src.timing_strategy_engine - INFO - 优化任务已调度: task_20251212_184909_memory_reconstruction - 批量记忆重构和压缩
+2025-12-12 18:49:09,937 - src.timing_strategy_engine - INFO - 优化任务已调度: task_20251212_184909_vector_db_update - 向量数据库增量更新
+2025-12-12 18:49:09,937 - src.timing_strategy_engine - INFO - 时机选择监控已启动
+2025-12-12 18:49:09,937 - src.nightly_maintenance_scheduler - INFO - ✅ 夜间维护调度已启动
+🌙 夜间维护调度已启动 - 将在系统空闲时自动执行
+🌙 注：每个任务每天只执行一次，通常在晚上22:00-6:00之间
+✅ 夜间维护调度器已启动
+   - 智能体将在系统空闲时（晚上22:00-6:00）自动写日记
+   - 自动执行记忆重构和向量库更新
+   - 明天可查看维护报告
+
+2025-12-12 18:49:09,938 - rag_system - INFO - 夜间维护调度器启动成功
+2025-12-12 18:49:09,938 - rag_system - INFO - 夜间维护调度器启动成功
+[知识图谱构建] 主题: 全局
+[知识图谱构建] 全部记忆数: 1224
+[知识图谱构建] 记忆库分布: 主库(active)=1224, 备库(archived)=0, 淘汰库(retired)=0
+[知识图谱构建] 本次节点数: 1224
+[知识图谱构建] 覆盖率(%)： 100.0
+[知识图谱构建] 是否全覆盖索引(full_index): True

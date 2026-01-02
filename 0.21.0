@@ -1,0 +1,18 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scikit-image
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8a/97/5fcf332e1753831abb99a2525180d3fb0d70918d461ebda9873f66dcc12f/scikit_image-0.25.2-cp313-cp313-win_amd64.whl (12.9 MB)
+     ------------------- 12.9/12.9 MB 37.8 MB/s  0:00:00
+Requirement already satisfied: numpy>=1.24 in e:\ragϵͳ\myenv_stable\lib\site-packages (from scikit-image) (2.2.6)
+Requirement already satisfied: scipy>=1.11.4 in e:\ragϵͳ\myenv_stable\lib\site-packages (from scikit-image) (1.16.3)
+Requirement already satisfied: networkx>=3.0 in e:\ragϵͳ\myenv_stable\lib\site-packages (from scikit-image) (3.6)
+Requirement already satisfied: pillow>=10.1 in e:\ragϵͳ\myenv_stable\lib\site-packages (from scikit-image) (12.0.0)
+Collecting imageio!=2.35.0,>=2.33 (from scikit-image)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fb/fe/301e0936b79bcab4cacc7548bf2853fc28dced0a578bab1f7ef53c9aa75b/imageio-2.37.2-py3-none-any.whl (317 kB)
+Collecting tifffile>=2022.8.12 (from scikit-image)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e6/5e/56c751afab61336cf0e7aa671b134255a30f15f59cd9e04f59c598a37ff5/tifffile-2025.10.16-py3-none-any.whl (231 kB)
+Requirement already satisfied: packaging>=21 in e:\ragϵͳ\myenv_stable\lib\site-packages (from scikit-image) (25.0)
+Collecting lazy-loader>=0.4 (from scikit-image)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/83/60/d497a310bde3f01cb805196ac61b7ad6dc5dcf8dce66634dc34364b20b4f/lazy_loader-0.4-py3-none-any.whl (12 kB)
+Installing collected packages: tifffile, lazy-loader, imageio, scikit-image
+
+Successfully installed imageio-2.37.2 lazy-loader-0.4 scikit-image-0.25.2 tifffile-2025.10.16

@@ -1,0 +1,183 @@
+# 分层学习引擎开发提示词
+# 来源：用户提供的完整组件开发需求
+# 时间：2025-11-22
+
+## 核心理念
+学习的本质是通过自主推导复现思维链，真正的理解体现在能够通过理性推导得出相同结论，即使推导路径与原始理论不同。
+
+## 引擎架构设计
+
+### 三级分层学习架构
+```
+分层学习引擎
+├── 数据感知层（直觉学习）
+│   ├── 模式发现
+│   ├── 特征提取
+│   └── 相似性识别
+│
+├── 模式抽象层（归纳学习）  
+│   ├── 规则提取
+│   ├── 概念形成
+│   └── 关系建模
+│
+└── 原理内化层（思维链重构）
+    ├── 推导路径生成
+    ├── 逻辑连贯性验证
+    └── 理解深度评估
+```
+
+## 各层详细设计
+
+### 第一层：数据感知层
+```python
+class DataPerceptionLayer:
+    """处理原始数据，形成初步认知"""
+    
+    def discover_patterns(self, raw_data: DataStream) -> List[Pattern]:
+        """从数据流中发现统计模式和规律"""
+        # 技术实现：聚类、关联规则、异常检测
+        # 目标：形成"直觉认知"
+    
+    def extract_salient_features(self, patterns: List[Pattern]) -> FeatureSet:
+        """提取显著特征，减少认知负荷"""
+        # 重点：识别对人类理解关键的特征
+        
+    def build_similarity_network(self, learned_concepts: List[Concept]) -> SimilarityGraph:
+        """构建概念相似性网络，支持类比学习"""
+```
+
+### 第二层：模式抽象层
+```python
+class PatternAbstractionLayer:
+    """从具体模式抽象出可复用知识"""
+    
+    def extract_general_rules(self, concrete_patterns: List[Pattern]) -> List[Rule]:
+        """从具体模式中归纳一般规则"""
+        # 关键：保持规则的可解释性
+        
+    def form_abstract_concepts(self, rule_clusters: List[RuleCluster]) -> List[AbstractConcept]:
+        """将相关规则聚类形成抽象概念"""
+        # 目标：构建概念层次结构
+        
+    def model_conceptual_relationships(self, concepts: List[AbstractConcept]) -> ConceptGraph:
+        """建模概念间的关系网络"""
+```
+
+### 第三层：原理内化层
+```python
+class PrincipleInternalizationLayer:
+    """通过思维链重构实现深度理解"""
+    
+    def reconstruct_thought_chain(self, 
+                                target_concept: Concept, 
+                                available_evidence: EvidenceSet) -> ThoughtChain:
+        """重构到达目标概念的完整思维链"""
+        # 核心方法：多路径推导探索
+        # 重点：推导过程的逻辑完整性
+        
+    def validate_derivation_coherence(self, thought_chain: ThoughtChain) -> CoherenceScore:
+        """验证思维链的逻辑连贯性"""
+        # 与理性逻辑引擎协作验证
+        
+    def assess_understanding_depth(self, 
+                                 thought_chain: ThoughtChain, 
+                                 alternative_chains: List[ThoughtChain]) -> UnderstandingMetric:
+        """通过多路径一致性评估理解深度"""
+```
+
+## 协作机制设计
+
+### 层间数据流
+```python
+@dataclass
+class InterLayerDataFlow:
+    # 自下而上：数据驱动认知
+    raw_patterns: List[Pattern]          # 感知层 → 抽象层
+    abstract_rules: List[Rule]           # 抽象层 → 内化层  
+    conceptual_frameworks: List[Framework] # 内化层 → 长期记忆
+    
+    # 自上而下：理论指导感知
+    attention_guidance: AttentionSignal  # 内化层 → 感知层
+    hypothesis_generation: List[Hypothesis] # 抽象层 → 感知层
+```
+
+### 与其他引擎的集成
+```python
+class EngineCollaborationInterface:
+    """定义与其他认知引擎的协作接口"""
+    
+    def collaborate_with_rational_logic(self, thought_chain: ThoughtChain):
+        """使用理性逻辑引擎验证推导步骤"""
+        return rational_logic_engine.validate_derivation_sequence(
+            thought_chain.derivation_steps
+        )
+    
+    def share_learned_patterns(self, root_cause_analyzer):
+        """与根因分析器共享学习到的模式"""
+        successful_patterns = self.extract_successful_derivation_patterns()
+        root_cause_analyzer.enhance_with_learned_patterns(successful_patterns)
+    
+    def receive_feedback_from_abductive(self, feedback: AbductiveFeedback):
+        """接收溯因引擎的反馈，优化推导策略"""
+        self.adjust_derivation_heuristics(feedback.successful_strategies)
+```
+
+## 学习质量评估体系
+
+### 基于推导能力的多维评估
+```python
+@dataclass
+class LearningQualityMetrics:
+    # 推导能力指标
+    path_discovery_ability: float      # 推导路径发现能力
+    logical_rigor_score: float         # 逻辑严谨性评分
+    derivation_efficiency: float       # 推导步骤效率
+    
+    # 理解深度指标  
+    conceptual_coverage: float         # 概念覆盖完整性
+    transfer_capability: float         # 跨领域迁移能力
+    creative_application: float        # 创造性应用能力
+    
+    # 一致性指标
+    inter_path_consistency: float      # 多推导路径一致性
+    temporal_stability: float          # 理解的时间稳定性
+```
+
+## 实施指导原则
+
+### 1. 渐进式学习路径
+学习阶段演进：
+数据感知 → 模式识别 → 规则形成 → 概念抽象 → 原理内化
+
+### 2. 推导路径多样性原则
+- 鼓励对同一概念生成多个推导路径
+- 验证不同路径结论的一致性
+- 奖励创造性的推导方法
+
+### 3. 反馈驱动优化
+```python
+def implement_learning_feedback_loop(self):
+    """实现学习效果的持续优化"""
+    while learning_ongoing:
+        # 执行学习周期
+        learning_result = self.execute_learning_cycle()
+        
+        # 收集各层反馈
+        perception_feedback = self.collect_perception_feedback()
+        abstraction_feedback = self.collect_abstraction_feedback()
+        internalization_feedback = self.collect_internalization_feedback()
+        
+        # 调整学习策略
+        self.adapt_learning_strategies(
+            perception_feedback,
+            abstraction_feedback,
+            internalization_feedback
+        )
+```
+
+## 关键成功要素
+
+1. **保持层次间信息流畅**：确保底层数据能驱动高层认知，高层理论能指导底层感知
+2. **重视推导过程质量**：学习的价值不仅在于结论正确，更在于推导过程的理性完整
+3. **实现真正理解验证**：通过多路径推导、反例测试、跨领域迁移来验证理解深度
+4. **与其他引擎协同进化**：将学习成果反馈给其他认知引擎，形成系统级智能提升
