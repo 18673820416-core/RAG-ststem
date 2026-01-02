@@ -14,6 +14,6 @@
     "data/rag_memory.db",
     "data/rag_system.db"
   ],
-  "git_setup_notes": "此项目已配置.gitignore忽略所有数据文件，只推送代码文件"
-  密码是：lrl110709
+  "git_setup_notes": "此项目已配置.gitignore忽略所有数据文件，只推送代码文件",
+  "password": "lrl110709"
 }
